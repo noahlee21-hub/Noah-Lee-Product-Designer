@@ -36,15 +36,13 @@
         }
         
         .view-section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            min-height: 80vh;
-        }
-        .view-section.active {
-            display: block;
-            opacity: 1;
-        }
+    display: none;
+    opacity: 1;
+    min-height: 80vh;
+}
+.view-section.active {
+    display: block;
+}
 
         .img-zoom-container { overflow: hidden; }
         .img-zoom-container img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -107,8 +105,7 @@
             Noah Lee
         </a>
         <div class="flex space-x-5 md:space-x-8 text-sm font-medium text-brand-muted">
-
-</a>
+    <a id="nav-featured" href="#work" class="hover:text-brand-text transition-colors">Featured</a>
     <a id="nav-about" href="#about" class="hover:text-brand-text transition-colors">About</a>
     <a id="nav-archive" href="#archive" class="hover:text-brand-text transition-colors">Archive</a>
 </div>
@@ -454,12 +451,10 @@
         footer.style.display = 'block';
     }
 
-    setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'auto' });
-        document.getElementById(viewId).classList.add('active');
-        setActiveNav(viewId);
-        setTimeout(reveal, 100);
-    }, 50);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.getElementById(viewId).classList.add('active');
+    setActiveNav(viewId);
+    reveal();
 }
 
         function getRouteFromView(viewId) {
@@ -508,18 +503,21 @@ function applyRoute() {
 }
 
 window.addEventListener('hashchange', applyRoute);
-window.addEventListener('load', applyRoute);
+window.addEventListener('DOMContentLoaded', applyRoute);
 
         function setActiveNav(viewId) {
+    const featured = document.getElementById('nav-featured');
     const about = document.getElementById('nav-about');
     const archive = document.getElementById('nav-archive');
 
-    [about, archive].forEach(el => {
+    [featured, about, archive].forEach(el => {
         el.classList.remove('text-brand-text', 'font-semibold');
         el.classList.add('text-brand-muted');
     });
 
-    if (viewId === 'about-view') {
+    if (viewId === 'home-view') {
+        featured.classList.add('text-brand-text', 'font-semibold');
+    } else if (viewId === 'about-view') {
         about.classList.add('text-brand-text', 'font-semibold');
     } else if (viewId === 'archive-view') {
         archive.classList.add('text-brand-text', 'font-semibold');
