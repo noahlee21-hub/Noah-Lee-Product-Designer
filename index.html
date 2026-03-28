@@ -107,10 +107,11 @@
             Noah Lee
         </a>
         <div class="flex space-x-5 md:space-x-8 text-sm font-medium text-brand-muted">
-            <a id="nav-work" href="#" onclick="navigate('home-view')" class="hover:text-brand-text transition-colors">Work</a>
-            <a id="nav-about" href="#" onclick="navigate('about-view')" class="hover:text-brand-text transition-colors">About</a>
-            <a id="nav-archive" href="#" onclick="navigate('archive-view')" class="hover:text-brand-text transition-colors">Archive</a>
-        </div>
+
+</a>
+    <a id="nav-about" href="#about" class="hover:text-brand-text transition-colors">About</a>
+    <a id="nav-archive" href="#archive" class="hover:text-brand-text transition-colors">Archive</a>
+</div>
     </nav>
 
     <!-- Main Content Wrapper -->
@@ -442,24 +443,24 @@
         setTimeout(reveal, 100);
 
         function navigate(viewId) {
-            document.querySelectorAll('.view-section').forEach(el => {
-                el.classList.remove('active');
-            });
-            
-            const footer = document.getElementById('global-footer');
-            if (viewId === 'project-view' || viewId === 'archive-detail-view') {
-                footer.style.display = 'none'; 
-            } else {
-                footer.style.display = 'block';
-            }
+    document.querySelectorAll('.view-section').forEach(el => {
+        el.classList.remove('active');
+    });
 
-            setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'auto' });
-                document.getElementById(viewId).classList.add('active');
-                setActiveNav(viewId);
-                setTimeout(reveal, 100);
-            }, 50);
-        }
+    const footer = document.getElementById('global-footer');
+    if (viewId === 'project-view' || viewId === 'archive-detail-view') {
+        footer.style.display = 'none';
+    } else {
+        footer.style.display = 'block';
+    }
+
+    setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        document.getElementById(viewId).classList.add('active');
+        setActiveNav(viewId);
+        setTimeout(reveal, 100);
+    }, 50);
+}
 
         function getRouteFromView(viewId) {
     if (viewId === 'home-view') return '#work';
@@ -472,25 +473,37 @@ function applyRoute() {
     const hash = window.location.hash || '#work';
 
     if (hash === '#work') {
-        navigate('home-view', false);
+        navigate('home-view');
     } else if (hash === '#about') {
-        navigate('about-view', false);
+        navigate('about-view');
     } else if (hash === '#archive') {
-        navigate('archive-view', false);
+        navigate('archive-view');
     } else if (hash === '#project/studysphere') {
         document.getElementById('project-content').innerHTML = studySphereContent;
         document.getElementById('nav-project-title').innerText = 'StudySphere';
-        navigate('project-view', false);
+        navigate('project-view');
+    } else if (hash === '#archive/iwc-event') {
+        document.getElementById('archive-detail-content').innerHTML = iwcEventContent;
+        document.getElementById('nav-archive-title').innerText = 'IWC Event Poster';
+        navigate('archive-detail-view');
+    } else if (hash === '#archive/chris-jill') {
+        document.getElementById('archive-detail-content').innerHTML = chrisJillContent;
+        document.getElementById('nav-archive-title').innerText = 'Pencil Study';
+        navigate('archive-detail-view');
     } else if (hash === '#archive/room-of-memories') {
         document.getElementById('archive-detail-content').innerHTML = roomOfMemoriesContent;
         document.getElementById('nav-archive-title').innerText = 'Room of Memories';
-        navigate('archive-detail-view', false);
+        navigate('archive-detail-view');
     } else if (hash === '#archive/scents-of-resilience') {
         document.getElementById('archive-detail-content').innerHTML = virtualSynesthesiaContent;
         document.getElementById('nav-archive-title').innerText = 'Scents of Resilience';
-        navigate('archive-detail-view', false);
+        navigate('archive-detail-view');
+    } else if (hash === '#archive/star-wars-ships') {
+        document.getElementById('archive-detail-content').innerHTML = starWarsShipsContent;
+        document.getElementById('nav-archive-title').innerText = 'Star Wars Low-Poly Ships';
+        navigate('archive-detail-view');
     } else {
-        navigate('home-view', false);
+        window.location.hash = '#work';
     }
 }
 
@@ -498,19 +511,15 @@ window.addEventListener('hashchange', applyRoute);
 window.addEventListener('load', applyRoute);
 
         function setActiveNav(viewId) {
-    const work = document.getElementById('nav-work');
     const about = document.getElementById('nav-about');
     const archive = document.getElementById('nav-archive');
 
-    // reset
-    [work, about, archive].forEach(el => {
+    [about, archive].forEach(el => {
         el.classList.remove('text-brand-text', 'font-semibold');
         el.classList.add('text-brand-muted');
     });
 
-    if (viewId === 'home-view') {
-        work.classList.add('text-brand-text', 'font-semibold');
-    } else if (viewId === 'about-view') {
+    if (viewId === 'about-view') {
         about.classList.add('text-brand-text', 'font-semibold');
     } else if (viewId === 'archive-view') {
         archive.classList.add('text-brand-text', 'font-semibold');
@@ -1102,14 +1111,19 @@ window.addEventListener('load', applyRoute);
 
         function openProject(id) {
     if (id === 'studysphere') {
-        document.getElementById('project-content').innerHTML = studySphereContent;
-        document.getElementById('nav-project-title').innerText = "StudySphere";
         window.location.hash = '#project/studysphere';
     } else {
-        const content = `
-            ...
+        document.getElementById('project-content').innerHTML = `
+            <div class="reveal-up text-center pt-20">
+                <h2 class="text-2xl font-bold mb-4">Coming Soon</h2>
+                <p class="text-brand-muted">This project is currently being documented.</p>
+            </div>
+            <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                <button onclick="window.location.hash='#work'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                    Return to Work
+                </button>
+            </div>
         `;
-        document.getElementById('project-content').innerHTML = content;
         document.getElementById('nav-project-title').innerText = "Project";
         navigate('project-view');
     }
@@ -1124,6 +1138,24 @@ window.addEventListener('load', applyRoute);
         window.location.hash = '#archive/room-of-memories';
     } else if (id === 'virtual-synesthesia') {
         window.location.hash = '#archive/scents-of-resilience';
+    } else if (id === 'star-wars-ships') {
+        window.location.hash = '#archive/star-wars-ships';
+    } else {
+        document.getElementById('archive-detail-content').innerHTML = `
+            <div class="reveal-up text-center pt-10">
+                <h2 class="text-2xl font-bold mb-8">Archive Item Details</h2>
+                <div class="w-full max-w-2xl mx-auto aspect-square bg-brand-border/20 flex items-center justify-center text-brand-muted mb-8 border border-dashed border-brand-border/50">
+                </div>
+                <p class="text-[#4a4a52] max-w-lg mx-auto mb-10">This is a placeholder for the individual archive item page. You can add specific text, extra images, or context for this archive piece here.</p>
+                <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                    <button onclick="window.location.hash='#archive'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                        Return to Archive
+                    </button>
+                </div>
+            </div>
+        `;
+        document.getElementById('nav-archive-title').innerText = "Archive Work";
+        navigate('archive-detail-view');
     }
 }
     </script>
