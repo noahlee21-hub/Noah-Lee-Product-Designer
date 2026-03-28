@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah Lee | Product Designer & Media Artist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#FAFAFA',
+                            text: '#111111',
+                            muted: '#71717A',
+                            border: '#E4E4E7',
+                            accent: '#000000'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: var(--brand-bg);
+            color: var(--brand-text);
+            overflow-x: hidden;
+        }
+        
+        .view-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            min-height: 80vh;
+        }
+        .view-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom-container img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .group:hover .img-zoom-container img { transform: scale(1.03); }
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::selection {
+            background-color: var(--brand-text);
+            color: var(--brand-bg);
+        }
+
+        /* Minimal Archive Grid */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+        }
+        @media (min-width: 640px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+        
+        /* Markdown Style for Project Details */
+        .project-body h2 { font-size: 1.5rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1rem; color: #111; }
+        .project-body h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: #111; }
+        .project-body p { font-size: 1.125rem; line-height: 1.8; color: #4a4a52; margin-bottom: 1.5rem; }
+        .project-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #4a4a52; font-size: 1.125rem; line-height: 1.8; }
+        .project-body li { margin-bottom: 0.5rem; }
+        
+        /* Placeholder Image Style Fixed for Centering */
+        .project-body .placeholder-img { 
+            width: 100%; 
+            background-color: rgba(228, 228, 231, 0.3); /* brand-border/30 */
+            border-radius: 0.5rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #71717A; 
+            font-size: 0.875rem; 
+            border: 1px dashed #E4E4E7; 
+            text-align: center; 
+            padding: 2rem 1rem; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Global Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-brand-bg/90 backdrop-blur-md py-4 md:py-6 px-5 md:px-12 flex justify-between items-center transition-all">
+        <a href="#" onclick="navigate('home-view')" class="text-base md:text-lg font-bold tracking-tight text-brand-text">
+            Noah Lee
+        </a>
+        <div class="flex space-x-5 md:space-x-8 text-sm font-medium text-brand-muted">
+            <a id="nav-work" href="#" onclick="navigate('home-view')" class="hover:text-brand-text transition-colors">Work</a>
+            <a id="nav-about" href="#" onclick="navigate('about-view')" class="hover:text-brand-text transition-colors">About</a>
+            <a id="nav-archive" href="#" onclick="navigate('archive-view')" class="hover:text-brand-text transition-colors">Archive</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-grow">
+        
+        <!-- ================= 1. HOME VIEW (Work) ================= -->
+        <main id="home-view" class="view-section active pt-28 md:pt-32">
+            
+            <!-- Hero Section -->
+            <section class="px-6 md:px-12 max-w-[80rem] mx-auto pt-10 pb-16">
+                <div class="reveal-up">
+                    <h1 class="text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 text-brand-text max-w-4xl">
+                        Crafting intuitive digital experiences through art and technology.
+                    </h1>
+                    <p class="text-lg md:text-xl text-brand-muted font-medium max-w-2xl leading-relaxed mb-6">
+                        Product Designer & Media Artist based in New York and Seoul.
+                    </p>
+                    <p class="text-base text-brand-muted max-w-2xl leading-relaxed">
+                        I recently graduated from <a href="https://itp.nyu.edu/ima/" target="_blank" class="font-bold underline text-[#57068c] hover:text-brand-muted transition-colors">NYU Tisch School of the Arts with a B.F.A in Interactive Media Arts</a>. By continuously expanding my toolkit across 3D design, multimedia, and product design methodologies, I strive to bridge the gap between aesthetic design and practical functionality.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Work Section -->
+            <section id="work-grid" class="px-6 md:px-12 max-w-[80rem] mx-auto py-10">
+                <div class="flex items-center gap-4 mb-12 border-b border-brand-border pb-4 reveal-up">
+                    <h2 class="text-sm font-semibold tracking-widest uppercase text-brand-text">Selected Projects</h2>
+                </div>
+                
+                <div class="space-y-20 md:space-y-24">
+                    
+                    <!-- Project 1: StudySphere -->
+                    <article class="group cursor-pointer reveal-up" onclick="openProject('studysphere')">
+                        <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
+                            <!-- Thumbnail -->
+                            <div class="w-full md:w-1/2 lg:w-[45%]">
+                                <div class="img-zoom-container rounded-xl bg-brand-border/30 overflow-hidden aspect-[4/3]">
+                                    <img src="https://drive.google.com/thumbnail?id=1w_ok1HLYuKQxRxZXQUdI5P5X7xLRD_RD&sz=w1000" alt="StudySphere Thumbnail" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <!-- Text -->
+                            <div class="w-full md:w-1/2 lg:w-[55%]">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">UX/UI Design</span>
+                                    <span class="w-1 h-1 bg-brand-border rounded-full"></span>
+                                    <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">2023</span>
+                                </div>
+                                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-brand-text group-hover:opacity-70 transition-opacity tracking-tight">StudySphere</h3>
+                                <p class="text-base md:text-lg text-brand-muted mb-6 leading-relaxed max-w-lg">
+                                    A mobile platform designed to help university students discover, evaluate, and track study spaces across New York City.
+                                </p>
+                                <span class="text-sm font-bold border-b border-brand-text pb-0.5 group-hover:text-brand-muted group-hover:border-brand-muted transition-colors inline-flex items-center gap-1">
+                                    View Project <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder Project 2 -->
+                    <article class="group cursor-pointer reveal-up" onclick="openProject('coming-soon')">
+                        <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
+                            <div class="w-full md:w-1/2 lg:w-[45%]">
+                                <div class="img-zoom-container rounded-xl bg-brand-border/10 border border-dashed border-brand-border/50 overflow-hidden aspect-[4/3] flex items-center justify-center text-brand-muted text-sm text-center px-4">
+                                    
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2 lg:w-[55%]">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">Media Art</span>
+                                </div>
+                                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-brand-text group-hover:opacity-70 transition-opacity tracking-tight">Coming Soon</h3>
+                                <p class="text-base md:text-lg text-brand-muted mb-6 leading-relaxed max-w-lg">
+                                    Next project case study is currently being documented and will be uploaded shortly.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- ================= 2. ARCHIVE VIEW ================= -->
+        <main id="archive-view" class="view-section pt-28 md:pt-32 pb-20">
+            <section class="px-6 md:px-12 max-w-[80rem] mx-auto pt-10">
+                <div class="mb-16 reveal-up">
+                    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Archive</h1>
+                    <p class="text-lg text-brand-muted">A collection of visual experiments, 3D explorations, and creative fragments.</p>
+                </div>
+
+                <!-- Minimal Grid Layout for Archive -->
+                <div class="archive-grid reveal-up">
+                    
+                    <!-- 1. IWC Event Poster -->
+                    <div class="group cursor-pointer" onclick="openArchiveDetail('iwc-event')">
+                        <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
+                            <img src="https://drive.google.com/thumbnail?id=1OzWb3Ium3M5Bl6_By75cTa0m_I9ewJih&sz=w800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="IWC Event Poster">
+                        </div>
+                        <h3 class="text-sm font-semibold text-brand-text">IWC Event Poster</h3>
+                        <p class="text-xs text-brand-muted mt-1">Visual Design / 2025</p>
+                    </div>
+
+                    <!-- 2. Virtual Synesthesia Exhibition -->
+<!-- 2. Scents of Resilience -->
+<div class="group cursor-pointer" onclick="openArchiveDetail('virtual-synesthesia')">
+    <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
+        <img src="https://drive.google.com/thumbnail?id=1ABgEEN6VZgTgsJTShzsUZgKwb2vmsEF1&sz=w1200"
+             alt="Scents of Resilience Thumbnail"
+             class="block w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+    </div>
+    <h3 class="text-sm font-semibold text-brand-text">Scents of Resilience (Virtual Synesthesia Exhibition)</h3>
+    <p class="text-xs text-brand-muted mt-1">Exhibition / 2024</p>
+</div>
+
+                    <!-- 3. Room of Memories (Replaced Washington Square News) -->
+                    <!-- 3. Room of Memories -->
+<div class="group cursor-pointer" onclick="openArchiveDetail('room-of-memories')">
+    <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
+        <img src="https://drive.google.com/thumbnail?id=1Ruq_K5UaXWBjbs7x9rBr1_ZOAGBrseMM&sz=w800"
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+             alt="Room of Memories Thumbnail">
+    </div>
+    <h3 class="text-sm font-semibold text-brand-text">Room of Memories</h3>
+    <p class="text-xs text-brand-muted mt-1">Capstone Project / 2025</p>
+</div>
+
+                    <!-- 4. Star Wars Low-Poly Ships -->
+<div class="group cursor-pointer" onclick="openArchiveDetail('star-wars-ships')">
+    <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
+        <img src="https://drive.google.com/thumbnail?id=1VL_btc1IzWAakfm_vuuxCdoCXJaZRn9k&sz=w800" 
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+             alt="X-Wing Render">
+    </div>
+    <h3 class="text-sm font-semibold text-brand-text">Star Wars Low-Poly Ships</h3>
+    <p class="text-xs text-brand-muted mt-1">3D Modeling / 2025</p>
+</div>
+
+                    <!-- 5. Archive Item: Chris & Jill -->
+                    <div class="group cursor-pointer" onclick="openArchiveDetail('chris-jill')">
+                        <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
+                            <img src="https://drive.google.com/thumbnail?id=1DZvPYFPM4kYTtPgV9H78HmHCnKNPfOGS&sz=w800" class="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105" alt="Final Pencil Drawing - Chris Redfield & Jill Valentine">
+                        </div>
+                        <h3 class="text-sm font-semibold text-brand-text">Chris Redfield & Jill Valentine Pencil Study</h3>
+                        <p class="text-xs text-brand-muted mt-1">Illustration / 2026</p>
+                    </div>
+
+                    <!-- 6. Placeholder Archive Item 3 -->
+                    <div class="group cursor-pointer" onclick="openArchiveDetail('placeholder-3')">
+                        <div class="aspect-[4/3] bg-brand-border/10 border border-dashed border-brand-border/50 mb-4 rounded-sm flex items-center justify-center text-brand-muted text-xs text-center px-4">
+                            
+                        </div>
+                        <h3 class="text-sm font-semibold text-brand-text">Archive Project TBA</h3>
+                        <p class="text-xs text-brand-muted mt-1">Coming Soon / 2026</p>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- ================= 3. ABOUT VIEW ================= -->
+        <main id="about-view" class="view-section pt-28 md:pt-32 pb-24">
+            <section class="px-6 md:px-12 max-w-[64rem] mx-auto pt-10">
+                
+                <div class="flex flex-col md:flex-row gap-12 md:gap-20 items-center reveal-up mb-16">
+                    
+                    <!-- Profile Photo -->
+                    <div class="w-full md:w-1/3 max-w-[240px]">
+                        <img src="https://drive.google.com/thumbnail?id=1_AUTO_e8nMY7jx6o5M71gU0-EuVTn3IO&sz=w1000" 
+                             alt="Noah Lee" 
+                             class="w-full aspect-[4/5] object-cover rounded-md bg-brand-border/30 shadow-sm">
+                    </div>
+
+                    <!-- Bio Text -->
+                    <div class="w-full md:w-2/3">
+                        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight leading-snug mb-6 text-brand-text">
+                            Interaction is my medium. I craft digital spaces that connect people and their stories.
+                        </h2>
+                        
+                        <div class="space-y-5 text-base text-[#4a4a52] leading-relaxed">
+                            <p>
+                                I currently design and research to craft engaging digital experiences, constantly exploring the intersection of 3D environments and user-centric platforms.
+                            </p>
+                            <p>
+                                In my previous internships, I analyzed client relationships at <a href="https://www.iwc.com/us-en" target="_blank" class="font-bold underline text-brand-text hover:text-brand-muted transition-colors">IWC Schaffhausen</a>, shaped digital narratives at <a href="https://www.instagram.com/reimaginedbk/" target="_blank" class="font-bold underline text-brand-text hover:text-brand-muted transition-colors">Reimagined BK</a>, and designed 3D assets at <a href="https://en.enhance-beauty.com" target="_blank" class="font-bold underline text-brand-text hover:text-brand-muted transition-colors">Enhance B</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extracurriculars -->
+                <div class="border-t border-brand-border/50 pt-16 reveal-up">
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-brand-muted mb-8">Extracurriculars</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div>
+    <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
+        <img src="https://drive.google.com/thumbnail?id=1ABgEEN6VZgTgsJTShzsUZgKwb2vmsEF1&sz=w1200"
+             alt="Virtual Synesthesia Challenge"
+             class="block w-full h-full object-cover rounded-sm">
+    </div>
+    <h4 class="text-base font-semibold text-brand-text">
+        <a href="https://engineering.nyu.edu/events/2024/03/05/nyc-media-lab-virtual-synesthesia-showcase" target="_blank" class="hover:text-brand-muted underline transition-colors">
+            Virtual Synesthesia Challenge (CHANEL x NYC Media Lab)
+        </a>
+    </h4>
+    <p class="text-sm text-brand-muted mt-1">Project Participant (Team Blum)</p>
+</div>
+                        <div>
+                            <div class="aspect-[4/3] bg-brand-border/10 mb-4 rounded-sm flex items-center justify-center text-xs text-brand-muted border border-dashed border-brand-border/50 text-center px-4">
+                                
+                            </div>
+                            <h4 class="text-base font-semibold text-brand-text">Star Wars Naver Café</h4>
+                            <p class="text-sm text-brand-muted mt-1">Manager & Translation Inspector</p>
+                        </div>
+                        <div>
+                            <div class="aspect-[4/3] bg-brand-border/10 mb-4 rounded-sm flex items-center justify-center text-xs text-brand-muted border border-dashed border-brand-border/50 text-center px-4">
+                                
+                            </div>
+                            <h4 class="text-base font-semibold text-brand-text">Washington Square News</h4>
+                            <p class="text-sm text-brand-muted mt-1">Multimedia Team Photographer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Interests -->
+                <div class="border-t border-brand-border/50 pt-16 mt-16 reveal-up">
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-brand-muted mb-8">When I'm not designing,</h3>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div>
+                            <div class="aspect-square overflow-hidden bg-brand-border/20 mb-3 rounded-sm">
+                                <img src="https://drive.google.com/thumbnail?id=1vv13WZuarqpBieKAA3Pio5AwS_u0zGAj&sz=w800" 
+                                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Golfing"/>
+                            </div>
+                            <h4 class="text-sm font-medium text-brand-text mb-1">Golfing</h4>
+                            <p class="text-xs text-brand-muted leading-relaxed">Finding balance and focus on the fairway.</p>
+                        </div>
+                        <div>
+                            <div class="aspect-square overflow-hidden bg-brand-border/20 mb-3 rounded-sm">
+                                <img src="https://drive.google.com/thumbnail?id=1Rw2ih90OpASRVcCxlmUOZOSA2D6KucL_&sz=w800" 
+                                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Gaming"/>
+                            </div>
+                            <h4 class="text-sm font-medium text-brand-text mb-1">Gaming</h4>
+                            <p class="text-xs text-brand-muted leading-relaxed">Analyzing game mechanics and exploring new realms.</p>
+                        </div>
+                        <div>
+                            <div class="aspect-square overflow-hidden bg-brand-border/20 mb-3 rounded-sm">
+                                <img src="https://drive.google.com/thumbnail?id=1yXTo0bWVDaP8RWHmCtn22Ka0TfRsRdy-&sz=w800" 
+                                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Socializing"/>
+                            </div>
+                            <h4 class="text-sm font-medium text-brand-text mb-1">Socializing</h4>
+                            <p class="text-xs text-brand-muted leading-relaxed">Sharing laughs and building memories with my closest friends.</p>
+                        </div>
+                        <div>
+                            <div class="aspect-square overflow-hidden bg-brand-border/20 mb-3 rounded-sm">
+                                <img src="https://drive.google.com/thumbnail?id=1CXBNa0_FputN6I7VpUUfwG6gWDkwvNXa&sz=w800" 
+                                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Watch Collecting"/>
+                            </div>
+                            <h4 class="text-sm font-medium text-brand-text mb-1">Horology</h4>
+                            <p class="text-xs text-brand-muted leading-relaxed">Appreciating the intricate micro-engineering of timepieces.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- ================= 4. PROJECT DETAIL VIEW ================= -->
+        <div id="project-view" class="view-section bg-brand-bg min-h-screen">
+            <nav class="fixed w-full top-0 z-50 bg-brand-bg/90 backdrop-blur-md py-4 md:py-6 px-5 md:px-12 flex justify-between items-center border-b border-brand-border/50">
+                <button onclick="navigate('home-view')" class="text-brand-muted hover:text-brand-text transition-colors flex items-center gap-2 text-sm font-medium">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+                </button>
+                <span class="font-semibold text-sm tracking-tight text-brand-text" id="nav-project-title">StudySphere</span>
+                <div class="w-16"></div> 
+            </nav>
+            
+            <div id="project-content" class="pt-28 md:pt-32 pb-32 max-w-[50rem] mx-auto px-6">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+
+        <!-- ================= 5. ARCHIVE DETAIL VIEW ================= -->
+        <div id="archive-detail-view" class="view-section bg-brand-bg min-h-screen">
+            <nav class="fixed w-full top-0 z-50 bg-brand-bg/90 backdrop-blur-md py-4 md:py-6 px-5 md:px-12 flex justify-between items-center border-b border-brand-border/50">
+                <button onclick="navigate('archive-view')" class="text-brand-muted hover:text-brand-text transition-colors flex items-center gap-2 text-sm font-medium">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Archive
+                </button>
+                <span class="font-semibold text-sm tracking-tight text-brand-text" id="nav-archive-title">Item</span>
+                <div class="w-16"></div>
+            </nav>
+            
+            <div id="archive-detail-content" class="pt-28 md:pt-32 pb-32 max-w-[60rem] mx-auto px-6">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= GLOBAL FOOTER ================= -->
+    <footer id="global-footer" class="py-12 px-6 md:px-12 border-t border-brand-border/50">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center text-sm font-medium text-brand-text gap-6">
+            <div class="flex gap-6">
+                <a href="mailto:sukminlee21@gmail.com" class="hover:text-brand-muted transition-colors">Email</a>
+                <a href="https://www.linkedin.com/in/noah-lee-766930235/" target="_blank" class="hover:text-brand-muted transition-colors">LinkedIn</a>
+                <a href="https://drive.google.com/file/d/1Nwo-PGDpXD_ACTp-5tLkUJY3NqKgW_bE/view?usp=share_link" target="_blank" class="hover:text-brand-muted transition-colors">Resume</a>
+            </div>
+            <div class="text-brand-muted text-xs">
+                &copy; 2026 Noah Lee
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal-up");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100);
+
+        function navigate(viewId) {
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            const footer = document.getElementById('global-footer');
+            if (viewId === 'project-view' || viewId === 'archive-detail-view') {
+                footer.style.display = 'none'; 
+            } else {
+                footer.style.display = 'block';
+            }
+
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'auto' });
+                document.getElementById(viewId).classList.add('active');
+                setActiveNav(viewId);
+                setTimeout(reveal, 100);
+            }, 50);
+        }
+
+        function setActiveNav(viewId) {
+    const work = document.getElementById('nav-work');
+    const about = document.getElementById('nav-about');
+    const archive = document.getElementById('nav-archive');
+
+    // reset
+    [work, about, archive].forEach(el => {
+        el.classList.remove('text-brand-text', 'font-semibold');
+        el.classList.add('text-brand-muted');
+    });
+
+    if (viewId === 'home-view') {
+        work.classList.add('text-brand-text', 'font-semibold');
+    } else if (viewId === 'about-view') {
+        about.classList.add('text-brand-text', 'font-semibold');
+    } else if (viewId === 'archive-view') {
+        archive.classList.add('text-brand-text', 'font-semibold');
+    }
+}
+
+        // Project Content for StudySphere
+        const studySphereContent = `
+            <div class="reveal-up">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">StudySphere</h1>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Role</h4>
+                        <p class="text-brand-muted">UX/UI Designer</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Timeline</h4>
+                        <p class="text-brand-muted">Sep 2023 - Dec 2023</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Context</h4>
+                        <p class="text-brand-muted">UX Design Classwork</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Tools</h4>
+                        <p class="text-brand-muted">Figma, FigJam</p>
+                    </div>
+                </div>
+                
+                <div class="w-full aspect-[16/9] bg-brand-border/30 rounded-lg overflow-hidden mb-16">
+                    <img src="https://drive.google.com/thumbnail?id=1w_ok1HLYuKQxRxZXQUdI5P5X7xLRD_RD&sz=w1200" class="w-full h-full object-cover" alt="StudySphere Hero">
+                </div>
+
+                <div class="project-body">
+                    <h2>Team</h2>
+                    <p>
+                        Noah Lee – UX/UI Designer<br>
+                        Hazel He – UX/UI Designer<br>
+                        Jaden Mansfield – UX/UI Designer
+                    </p>
+
+                    <h2>Project Background</h2>
+                    <p>New York City students have access to a wide range of study environments university libraries, public libraries, coffee shops, and co-working spaces. Despite this abundance, many students repeatedly return to the same familiar location.</p>
+                    <p>This project originally began with a narrow focus: "How might we redesign the library study room reservation system?"</p>
+                    <p>However, through research, we realized the problem was broader than reservations alone.</p>
+
+                    <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1fJ7EvgYrAaty-4kO7yIvKdm41bkax7gU&sz=w1200"
+         alt="Final UX Presentation Slide 6"
+         class="w-full max-w-[320px] md:max-w-[600px]">
+</div>
+
+                    <h2>Research Direction</h2>
+                    <p>Before committing to a solution, we asked:</p>
+                    <ul>
+                        <li>Should we focus solely on reservation systems?</li>
+                        <li>Or should we more broadly help students discover and evaluate study spaces?</li>
+                        <li>What study spaces do students in NYC actually use most?</li>
+                    </ul>
+
+                    <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1VhJeY73wqif5IsL50AayFhlpFuIFUWcp&sz=w1200"
+         alt="Final UX Presentation Slide 7"
+         class="w-full max-w-[320px] md:max-w-[600px]">
+</div>
+
+                    <h2>Research Methods</h2>
+                    <p>To better understand student behavior, we conducted:</p>
+                    <ul>
+                        <li>6 semi-structured interviews (ages 19-55)</li>
+                        <li>A card sorting activity</li>
+                        <li>Dot-sorting concept validation</li>
+                        <li>Field visits to Bobst Library and NYPL</li>
+                    </ul>
+
+                    <div class="flex flex-col gap-6 my-12 items-center">
+    <img src="https://drive.google.com/thumbnail?id=1dysmvuf2v6UVUTrveySyxWZiZZiCYKEa&sz=w1200"
+         alt="Final UX Presentation Slide 31"
+         class="w-full max-w-[600px]">
+
+    <img src="https://drive.google.com/thumbnail?id=1f_bLQGDfMSyLBM3uwvzV_Cc_72gvBBos&sz=w1200"
+         alt="Final UX Presentation Slide 32"
+         class="w-full max-w-[600px]">
+</div>
+
+                    <h2>Key Findings</h2>
+                    <p>From our interviews and activities, several patterns emerged:</p>
+                    <ol class="list-decimal pl-6 mb-6 text-[#4a4a52] text-lg leading-[1.8]">
+                        <li class="mb-2">Students struggle with unclear or unreliable reservation systems.</li>
+                        <li class="mb-2">Physical needs strongly affect productivity.</li>
+                        <li class="mb-2">Study preferences vary widely - from silent study to group collaboration to Zoom meetings.</li>
+                        <li class="mb-2">Students avoid new locations due to uncertainty about comfort and available resources.</li>
+                    </ol>
+                    <p>The card sort revealed that the most important environmental factors were: outlets, windows, and silent study conditions.</p>
+
+                    <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1PzoNmSjqlpkIear3VGjEcXhjDzX7itD0&sz=w1200"
+         alt="Final UX Presentation Slide 33"
+         class="w-full max-w-[320px] md:max-w-[600px]">
+</div>
+                    <h2>Persona - Jack</h2>
+                    <p>Jack is a full-time Game Design student in NYC. He prefers studying around other people because it motivates him, yet he often returns to the same library because he knows it has comfortable chairs, reliable WiFi, and outlets.</p>
+                    <p>Jack wants to explore new spaces but avoids them due to uncertainty. He does not want to waste time traveling to a location that might not meet his needs.</p>
+
+                    <div class="flex flex-col gap-6 my-12 items-center">
+    <img src="https://drive.google.com/thumbnail?id=1TLf9fxVbV6KwKhPpARCGnW8IZzqVaMJb&sz=w1200"
+         alt="Midpoint UX Presentation Slide 12"
+         class="w-full max-w-[600px]">
+
+    <img src="https://drive.google.com/thumbnail?id=1kEcKQklNbPwD8t4UgHtYz9zD3fYkMUPv&sz=w1200"
+         alt="Midpoint UX Presentation Slide 14"
+         class="w-full max-w-[600px]">
+</div>
+
+                    <h2>Reframing the Problem</h2>
+                    <p>Originally, we aimed to improve reservation systems. However, research revealed that students needed clear environmental information, resource transparency, and confidence before arrival.</p>
+                    <p>We reframed our challenge as: "How might we help students discover and confidently choose study spaces aligned with their needs?"</p>
+
+                    <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1ZkMUZ5RwraHdnlmp6G41I8gs2O06kQu1&sz=w1200"
+         alt="Final UX Presentation Slide 12"
+         class="w-full max-w-[320px] md:max-w-[600px]">
+</div>
+
+                    <h2>Solution Overview - StudySphere</h2>
+                    <p>StudySphere is a mobile platform that supports study space discovery and informed decision-making.</p>
+                    <p>The platform allows students to:</p>
+                    <ul>
+                        <li>Discover nearby study locations</li>
+                        <li>Filter by physical resources</li>
+                        <li>View availability indicators</li>
+                        <li>Save and track visited spaces</li>
+                        <li>Stay motivated through exploration-based rewards</li>
+                    </ul>
+
+                    <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1dUTA5FI3JnNeZYAokep1qrC74z2jIH5a&sz=w1200"
+         alt="Final UX Presentation Slide 18"
+         class="w-full max-w-[320px] md:max-w-[600px]">
+</div>
+
+                    <h2>Personalization & Filtering</h2>
+                    <p>To reduce uncertainty and decision fatigue, we introduced onboarding preferences where users specify preferred environments and required physical resources.</p>
+                    
+                    <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1PzbvwbHvwx7m4KaoFaz5eYCesjbjeMHb&sz=w1200"
+         alt="Final UX Presentation Slide 20"
+         class="w-full max-w-[320px] md:max-w-[600px]">
+</div>
+
+                    <h2>Core Experience</h2>
+                    <p>After logging in, users can view nearby spaces, apply filters, access detailed room information, leave reviews, and track visited locations.</p>
+                    
+                    <div class="flex flex-col gap-6 my-12 items-center">
+    <img src="https://drive.google.com/thumbnail?id=1V9AloCHLqvmbs3MV05DddZMAvAUQI3n3&sz=w1200"
+         alt="Final UX Presentation Slide 21"
+         class="w-full max-w-[600px]">
+
+    <img src="https://drive.google.com/thumbnail?id=16VAjjeVJgJYkhIb5Ezj9s4Md9UDt-ISt&sz=w1200"
+         alt="Final UX Presentation Slide 22"
+         class="w-full max-w-[600px]">
+</div>
+
+                    <h2>Motivation System</h2>
+                    <p>To encourage exploration, we introduced a reward system inspired by gamified learning platforms such as Duolingo.</p>
+                    <p>Features include mission lists, achievement badges, visit tracking, and ranking systems.</p>
+                    
+                    <div class="flex flex-col gap-6 my-12 items-center">
+    <img src="https://drive.google.com/thumbnail?id=1DQcrg0r5ET4d1cC1-y27wvymT9GFB07D&sz=w1200"
+         alt="Final UX Presentation Slide 23"
+         class="w-full max-w-[600px]">
+
+    <img src="https://drive.google.com/thumbnail?id=1SJpYEpcmkPKmiMFufGrQ48tLBi3xRgU4&sz=w1200"
+         alt="Final UX Presentation Slide 28"
+         class="w-full max-w-[600px]">
+</div>
+
+                    <h2>User Flow</h2>
+                    <p>The structured journey follows:</p>
+                    <p class="font-semibold text-brand-text mb-6 mt-4">Sign Up → Preference Selection → Discovery → Evaluation → Visit Review → Reward</p>
+                    
+                    <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1_2NQNNnCuaXPwRe7I4hJMwB9DxRZKoc7&sz=w1200"
+         alt="Final UX Presentation Slide 11"
+         class="w-full max-w-[320px] md:max-w-[600px]">
+</div>
+
+                    <h2>Future Considerations</h2>
+                    <p>If continued, the project could evolve through real-time data partnerships with libraries, social recommendation layers, and longitudinal testing of motivation effectiveness.</p>
+
+                    <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1tRbnFpo0IhLTh1DGGfRJFEQygymVYBgG&sz=w1200"
+         alt="Final UX Presentation Slide 25"
+         class="w-full max-w-[320px] md:max-w-[600px]">
+</div>
+                </div>
+
+                <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                    <button onclick="navigate('home-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                        Return to Work
+                    </button>
+                </div>
+            </div>
+        `;
+
+        // Archive Content for IWC Event Poster
+        const iwcEventContent = `
+            <div class="reveal-up">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">IWC Event Poster</h1>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Role</h4>
+                        <p class="text-brand-muted">CRM Intern</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Date</h4>
+                        <p class="text-brand-muted">Oct 2025</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Organization</h4>
+                        <p class="text-brand-muted">IWC Schaffhausen (Richemont)</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Location</h4>
+                        <p class="text-brand-muted">Hyundai Department Store Apgujeong Main Store, Seoul</p>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <p class="text-xl font-medium leading-relaxed mb-12 text-brand-text">
+                        This poster was created for a boutique coffee cart event hosted by IWC Schaffhausen at the Hyundai Department Store Apgujeong Main Store in Seoul. During the event, visitors who purchased or consulted about watches at the boutique were invited to enjoy a complimentary Einspänner coffee featuring latte art inspired by the IWC Ingenieur design language.
+                    </p>
+
+                    <div class="my-16 flex justify-center">
+                        <img src="https://drive.google.com/thumbnail?id=1mw4yWdN3XiOPcw4F0bibNoc_52NsCI7s&sz=w1000" alt="IWC Main Event Poster" class="w-full max-w-[320px] md:max-w-[400px]">
+                    </div>
+
+                    <h2>Event Description</h2>
+                    <p>The event took place at the IWC boutique located on the second floor of the Hyundai Department Store Apgujeong Main Store.</p>
+                    <p>A small coffee cart was installed next to the escalator beside the boutique entrance. The activation allowed boutique visitors to enjoy a complimentary Einspänner coffee decorated with latte art inspired by the IWC Ingenieur collection, creating a casual and memorable brand experience for guests visiting the boutique.</p>
+
+                    <h2>My Role</h2>
+                    <p>As a CRM Intern at IWC Korea, I adapted and refined the existing event poster template used for boutique activations and prepared the visual material for the coffee cart promotion.</p>
+                    <p>During the event, I worked at the coffee cart alongside the CRM manager and partner baristas, welcoming visitors, explaining the event concept, and supporting the boutique staff by assisting with guest engagement and customer flow.</p>
+
+                    <h2>Event Photos</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                        <div class="overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1DEkUicu9Py7wRLjiHTdSjWGDqNptQRVu&sz=w800" alt="IWC Coffee Cart Setup" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1UN_OqiGDhwvfQxq_Df7pME_uaC_HFUZd&sz=w800" alt="IWC Event Visitors" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                    <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                        Return to Archive
+                    </button>
+                </div>
+            </div>
+        `;
+
+        // Archive Content for Chris & Jill Pencil Study
+        const chrisJillContent = `
+            <div class="reveal-up">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">Chris Redfield & Jill Valentine Pencil Study</h1>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Medium</h4>
+                        <p class="text-brand-muted">Graphite on paper</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Date</h4>
+                        <p class="text-brand-muted">Feb 2026</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Category</h4>
+                        <p class="text-brand-muted">Personal Drawing Series</p>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
+                        This drawing is part of a personal sketch series inspired by characters from Resident Evil 5.
+                    </p>
+                    <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
+                        The characters Chris Redfield and Jill Valentine are long-standing partners in the series. While working on this drawing, I was reminded of a graduation photo I took with my childhood friend Violet Hyun. We first met as children and later reunited years later as friends in the same university program, which made our graduation moment especially meaningful.
+                    </p>
+                    <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
+                        When we planned the photo, I suggested posing like field agents-not just because I liked the game series, but because the enduring partnership between these characters felt similar to the story of our own friendship.
+                    </p>
+                    <p class="text-xl font-medium leading-relaxed mb-12 text-brand-text">
+                        This drawing revisits that moment by translating the cinematic duo from the game into a traditional graphite study.
+                    </p>
+
+                    <div class="my-16 flex justify-center">
+                        <img src="https://drive.google.com/thumbnail?id=1DZvPYFPM4kYTtPgV9H78HmHCnKNPfOGS&sz=w1200" alt="Final Pencil Drawing - Chris Redfield & Jill Valentine" class="w-full max-w-[320px] md:max-w-[400px]">
+                    </div>
+
+                    <h2>Reference Image</h2>
+                    <div class="my-16 flex justify-center">
+                        <img src="https://drive.google.com/thumbnail?id=12_Dw9RTx6-PgahS2euOm53pY5wlp-Vdz&sz=w1000" alt="Reference Image" class="w-full max-w-[320px] md:max-w-[400px]">
+                    </div>
+                    <p class="text-sm text-center text-brand-muted mt-2 mb-16 italic">"Reference image used for the drawing."</p>
+
+                    <h2>Graduation Photos</h2>
+                    <p>These photos provide context for the personal inspiration behind the drawing.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1yXTo0bWVDaP8RWHmCtn22Ka0TfRsRdy-&sz=w1000" alt="Graduation Photo 1" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1v3oxj9CfkVQRB-uILUN0Q6QPvD4DR_qm&sz=w1000" alt="Graduation Photo 2" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="overflow-hidden">
+                            <img src="https://drive.google.com/thumbnail?id=1YN5Zk2LX7-Jgyn0yFxxc471sbl16H5K8&sz=w1000" alt="Graduation Photo 3" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                    <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                        Return to Archive
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        // Archive Content for Star Wars Blender
+        const starWarsShipsContent = `
+            <div class="reveal-up">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">Star Wars Low-Poly Ships</h1>
+        
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Medium</h4>
+                        <p class="text-brand-muted">3D Modeling (Blender)</p>
+                    </div>
+                <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Date</h4>
+                        <p class="text-brand-muted">September 2025</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-brand-text mb-1">Category</h4>
+                    <p class="text-brand-muted">Personal 3D Study</p>
+                </div>
+            </div>
+
+                <div class="project-body">
+                    <p class="text-xl font-medium leading-relaxed mb-12 text-brand-text">
+                        This project is a personal 3D modeling study created in Blender, inspired by spacecraft from the Star Wars universe. I have loved the series since I was very young, and the spacecraft designs in the films have always been one of the elements that fascinated me the most. Among the many ships that appear throughout the series, I chose to model the TIE Fighter and the X-Wing because they are two of the most iconic spacecraft in the franchise. Rather than recreating them with film-level realism, I interpreted the designs using a low-poly modeling style, which I personally enjoy working with. The goal of this project was not to reproduce every small detail, but to capture the recognizable silhouettes of the ships while simplifying their geometry into clean, stylized forms.
+                    </p>
+
+                <div class="flex flex-col gap-6 my-16 items-center">
+    <img src="https://drive.google.com/thumbnail?id=1kPkENB9wRIMxaRpDnwJ7yooP9Q_FOCiJ&sz=w1200" 
+         alt="TIE Fighter Render" 
+         class="w-full max-w-[600px]">
+
+    <img src="https://drive.google.com/thumbnail?id=1VL_btc1IzWAakfm_vuuxCdoCXJaZRn9k&sz=w1200" 
+         alt="X-Wing Render" 
+         class="w-full max-w-[600px]">
+</div>
+            </div>
+
+            <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                    Return to Archive
+                </button>
+            </div>
+            </div>
+        `; 
+
+        const virtualSynesthesiaContent = `
+    <div class="reveal-up">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">Scents of Resilience</h1>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Event</h4>
+                <p class="text-brand-muted">NYC Media Lab × CHANEL – Virtual Synesthesia Showcase (Team Blum)</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Project Duration</h4>
+                <p class="text-brand-muted">Nov 2023 – Mar 2024</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Exhibition Date</h4>
+                <p class="text-brand-muted">Mar 2024</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Medium</h4>
+                <p class="text-brand-muted">Interactive Installation / Multisensory Experience</p>
+            </div>
+        </div>
+
+        <div class="project-body">
+            <h2>Team</h2>
+            <p>
+                Thomas McCluskey – Lead Designer / Technical Integration<br>
+                Annelise Lee – Designer<br>
+                Noah Lee – Designer
+            </p>
+
+            <h2>Role – Noah Lee</h2>
+            <p>
+                Focused on user interviews and visual design. Conducted interviews with participants affected by smell dysfunction and translated their experiences into visual storytelling. Designed a series of posters, including narrative-focused pieces that communicate how individuals adapt emotionally and behaviorally to smell loss.
+            </p>
+
+            <h2>Project Description</h2>
+            <p>
+                Scents of Resilience is an interactive installation developed for the NYC Media Lab × CHANEL Virtual Synesthesia Showcase. The project explores the impact of smell dysfunction, particularly following COVID-19, through a combination of research, storytelling, and sensory interaction. The installation includes informational posters, interview-based narratives, and scent-based interactions such as scratch-and-sniff elements. Visitors engage with both factual and personal content, gaining a deeper understanding of how smell loss affects everyday life.
+            </p>
+
+            <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1Bcjzp7MyFSFmAcTACzaZGTtZU_QFdzHC&sz=w1200"
+         alt="Scents of Resilience Poster 3"
+         class="w-full max-w-[400px]">
+</div>
+
+            <p>
+                This poster focuses on how individuals cope with smell dysfunction in their daily lives. Rather than presenting clinical information, it highlights personal resilience and emotional adaptation. Based on interview insights, it reflects how people maintain their sense of vitality through everyday activities such as hobbies, routines, and small personal practices.
+            </p>
+
+            <h2>Installation Documentation</h2>
+
+            <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1aLSNA3cXY6IZk8ckiI0dGzmcZ3qoIfCr&sz=w1200"
+         alt="Wall posters wide shot"
+         class="w-full max-w-[400px]">
+</div>
+            <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1ABgEEN6VZgTgsJTShzsUZgKwb2vmsEF1&sz=w1200"
+         alt="Table with oils and stickers"
+         class="w-full max-w-[500px]">
+</div>
+            <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=12X2Grg_AriGpNNOozmLSzTVHtfRkgdP-&sz=w1200"
+         alt="Visitors interacting with installation"
+         class="w-full max-w-[500px]">
+</div>
+        </div>
+
+        <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+            <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                Return to Archive
+            </button>
+        </div>
+    </div>
+`;
+
+        // Archive Content for Room of Memories (Newly Added)
+        const roomOfMemoriesContent = `
+            <div class="reveal-up">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">Room of Memories</h1>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Role</h4>
+                        <p class="text-brand-muted">Concept, Design, Development — Noah Lee</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Date</h4>
+                        <p class="text-brand-muted">May 2025</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Type</h4>
+                        <p class="text-brand-muted">Capstone Project (NYU IMA)</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-text mb-1">Tools</h4>
+                        <p class="text-brand-muted">Framer, Adobe Illustrator, p5.js, Blender</p>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <h2>Overview</h2>
+                    <p class="mb-6">
+    <a href="https://noahscapstone.framer.website" target="_blank" 
+       class="font-semibold underline text-brand-text hover:text-brand-muted transition-colors">
+        View Live Website ↗
+    </a>
+</p>
+                    <p>Room of Memories is an interactive website created as my NYU IMA capstone project.</p>
+                    <p>The site presents a virtual room where each object represents a personal memory.</p>
+                    <p>By exploring the room and clicking different items, visitors can discover stories connected to the people and experiences that shaped my time in college.</p>
+                    <p>Rather than presenting memories as a linear narrative, the project encourages exploration. Each object acts as a small entry point into a larger story, allowing the room to function as a collection of emotional fragments rather than a single timeline.</p>
+
+                    <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=13gE7291f5OY3CWsnGH9JbIGlkC6fFtO4&sz=w1200"
+         class="w-full max-w-[700px]">
+</div>
+
+                    <h2>Concept & Inspiration</h2>
+                    <p>The concept grew from thinking about how memories are often connected to physical objects. Everyday items such as toys, food, or small belongings can quietly hold emotional meaning. I wanted to translate that idea into an interactive digital space where memories could be discovered through exploration.</p>
+                    <p>To shape the stories inside the room, I interviewed several friends and asked about moments or objects that were meaningful to them. These conversations became the basis for many of the memories represented on the site.</p>
+
+                    <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1EbUHWmiGiAFotgF-bFgBoUkWzRy444Cu&sz=w1200"
+         class="w-full max-w-[700px]">
+</div>
+
+                    <h2>Research & Interviews</h2>
+                    <p>To build the project, I conducted informal interviews with friends and classmates.</p>
+                    <p>Instead of structured surveys, the conversations focused on memories, favorite foods, movies, and meaningful experiences.</p>
+                    <p>These interviews helped transform personal stories into visual objects inside the room. The goal was not to document memories perfectly, but to capture the feeling behind them and translate that emotion into an interactive experience.</p>
+
+                    <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1Cd2IMDMIOmFtYA3uRh8ntySscLmz61z1&sz=w1200"
+         class="w-full max-w-[700px]">
+</div>
+
+                    <h2>Design & Development</h2>
+                    <p>The website was built in Framer, while visual elements and objects were illustrated in Adobe Illustrator. Each object was designed to be simple and recognizable while still carrying a sense of personality and narrative.</p>
+                    <p>I also created a small interactive play space using p5.js and Blender assets. This feature was inspired by childhood play and experimentation, allowing visitors to interact with the environment rather than simply observe it.</p>
+
+                    <div class="flex flex-col gap-6 my-8 items-center">
+    <img src="https://drive.google.com/thumbnail?id=1LbLBTNGOH4yNHpfM_unyTd4w42g4WC3d&sz=w1200"
+         class="w-full max-w-[700px]">
+
+    <img src="https://drive.google.com/thumbnail?id=1NQU_PHBKy0Kd_JII7VXMcC8rgxSijY3A&sz=w1200"
+         class="w-full max-w-[700px]">
+
+    <img src="https://drive.google.com/thumbnail?id=1k72-XgGlGPQywcLO2r6KcYEG3kCtFHSm&sz=w1200"
+         class="w-full max-w-[700px]">
+</div>
+
+                    <h2>Results</h2>
+                    <p>The final result is a fully interactive website where visitors explore a room of memories and discover stories through objects, galleries, and interactive elements.</p>
+
+                    <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1bVqYo2MNd0QxomnrSu6a4oZ5n0-An7D7&sz=w1200"
+         class="w-full max-w-[700px]">
+</div>
+
+                    <h2>Playtesting</h2>
+                    <p>The project was playtested with friends who contributed memories and with people who had no prior context about the project. This helped reveal both emotional responses and usability issues.</p>
+                    <p>One of the playtesters was Edward Jones, the concierge of City Tower Brooklyn—the apartment building where I lived throughout my entire time as a student. Watching someone completely unfamiliar with the project explore the site provided useful insight into how intuitive the experience was for new visitors.</p>
+
+                    <div class="my-8 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=17nbLgxas_GbFyVWY8aNxc8TEdglNRzmf&sz=w1200"
+         class="w-full max-w-[700px]">
+</div>
+
+                    <h2>Reflection</h2>
+                    <p>Through this project I realized that meaningful design is not only about visual polish but about storytelling and emotional connection. Designing Room of Memories made me more interested in creating interactive experiences that combine personal narratives with playful exploration.</p>
+
+                    <h2>Credits & Acknowledgements</h2>
+                    <p><strong>Credits</strong></p>
+                    <p>Project by Noah Lee</p>
+
+                    <p><strong>Special thanks to</strong></p>
+                    <p>Jiyoon Lee<br>
+                    Violet Hyun<br>
+                    Annelise Lee<br>
+                    Ava Auffret<br>
+                    Joshua Thwaites<br>
+                    In Kun Chun<br>
+                    Muhan Liu<br>
+                    Delaney Wong<br>
+                    Clarissa Pace<br>
+                    Jaden Mansfield<br>
+                    Tom McCluskey<br>
+                    Hannah Zhao<br>
+                    Jenna Han<br>
+                    Shiva Kansagara<br>
+                    Samay Dhawan</p>
+
+                    <p>Special thanks to Edward Jones, City Tower Brooklyn concierge</p>
+
+                    <p><strong>Thanks to our ITP IMA Professors</strong></p>
+                    <p>Prof. Katherine Dillon<br>
+                    Prof. Rebecca Blum<br>
+                    Prof. Daniel Shiffman<br>
+                    Prof. Rashida Kamal</p>
+                </div>
+
+                <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                    <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                        Return to Archive
+                    </button>
+                </div>
+            </div>
+        `;
+
+        function openProject(id) {
+            if (id === 'studysphere') {
+                document.getElementById('project-content').innerHTML = studySphereContent;
+                document.getElementById('nav-project-title').innerText = "StudySphere";
+                navigate('project-view');
+            } else {
+                const content = `
+                    <div class="reveal-up text-center pt-20">
+                        <h2 class="text-2xl font-bold mb-4">Coming Soon</h2>
+                        <p class="text-brand-muted">This project is currently being documented.</p>
+                    </div>
+                    <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                        <button onclick="navigate('home-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                            Return to Work
+                        </button>
+                    </div>
+                `;
+                document.getElementById('project-content').innerHTML = content;
+                document.getElementById('nav-project-title').innerText = "Project";
+                navigate('project-view');
+            }
+        }
+
+        function openArchiveDetail(id) {
+    if (id === 'iwc-event') {
+        document.getElementById('archive-detail-content').innerHTML = iwcEventContent;
+        document.getElementById('nav-archive-title').innerText = "IWC Event Poster";
+        navigate('archive-detail-view');
+    } else if (id === 'chris-jill') {
+        document.getElementById('archive-detail-content').innerHTML = chrisJillContent;
+        document.getElementById('nav-archive-title').innerText = "Pencil Study";
+        navigate('archive-detail-view');
+    } else if (id === 'room-of-memories') {
+        document.getElementById('archive-detail-content').innerHTML = roomOfMemoriesContent;
+        document.getElementById('nav-archive-title').innerText = "Room of Memories";
+        navigate('archive-detail-view');
+    } else if (id === 'star-wars-ships') {
+        document.getElementById('archive-detail-content').innerHTML = starWarsShipsContent;
+        document.getElementById('nav-archive-title').innerText = "Star Wars Low-Poly Ships";
+        navigate('archive-detail-view');
+    } else if (id === 'virtual-synesthesia') {
+    document.getElementById('archive-detail-content').innerHTML = virtualSynesthesiaContent;
+    document.getElementById('nav-archive-title').innerText = "Scents of Resilience";
+    navigate('archive-detail-view');
+    } else {
+        const content = `
+            <div class="reveal-up text-center pt-10">
+                <h2 class="text-2xl font-bold mb-8">Archive Item Details</h2>
+                <div class="w-full max-w-2xl mx-auto aspect-square bg-brand-border/20 rounded-md flex items-center justify-center text-brand-muted mb-8 border border-dashed border-brand-border/50">
+                    
+                </div>
+                <p class="text-[#4a4a52] max-w-lg mx-auto mb-10">This is a placeholder for the individual archive item page. You can add specific text, extra images, or context for this archive piece here.</p>
+                <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+                    <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                        Return to Archive
+                    </button>
+                </div>
+            </div>
+        `;
+        document.getElementById('archive-detail-content').innerHTML = content;
+        document.getElementById('nav-archive-title').innerText = "Archive Work";
+        navigate('archive-detail-view');
+    }
+}
+    </script>
+</body>
+</html>
