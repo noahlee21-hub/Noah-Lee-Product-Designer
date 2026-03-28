@@ -461,6 +461,42 @@
             }, 50);
         }
 
+        function getRouteFromView(viewId) {
+    if (viewId === 'home-view') return '#work';
+    if (viewId === 'about-view') return '#about';
+    if (viewId === 'archive-view') return '#archive';
+    return '#work';
+}
+
+function applyRoute() {
+    const hash = window.location.hash || '#work';
+
+    if (hash === '#work') {
+        navigate('home-view', false);
+    } else if (hash === '#about') {
+        navigate('about-view', false);
+    } else if (hash === '#archive') {
+        navigate('archive-view', false);
+    } else if (hash === '#project/studysphere') {
+        document.getElementById('project-content').innerHTML = studySphereContent;
+        document.getElementById('nav-project-title').innerText = 'StudySphere';
+        navigate('project-view', false);
+    } else if (hash === '#archive/room-of-memories') {
+        document.getElementById('archive-detail-content').innerHTML = roomOfMemoriesContent;
+        document.getElementById('nav-archive-title').innerText = 'Room of Memories';
+        navigate('archive-detail-view', false);
+    } else if (hash === '#archive/scents-of-resilience') {
+        document.getElementById('archive-detail-content').innerHTML = virtualSynesthesiaContent;
+        document.getElementById('nav-archive-title').innerText = 'Scents of Resilience';
+        navigate('archive-detail-view', false);
+    } else {
+        navigate('home-view', false);
+    }
+}
+
+window.addEventListener('hashchange', applyRoute);
+window.addEventListener('load', applyRoute);
+
         function setActiveNav(viewId) {
     const work = document.getElementById('nav-work');
     const about = document.getElementById('nav-about');
@@ -1065,67 +1101,29 @@
         `;
 
         function openProject(id) {
-            if (id === 'studysphere') {
-                document.getElementById('project-content').innerHTML = studySphereContent;
-                document.getElementById('nav-project-title').innerText = "StudySphere";
-                navigate('project-view');
-            } else {
-                const content = `
-                    <div class="reveal-up text-center pt-20">
-                        <h2 class="text-2xl font-bold mb-4">Coming Soon</h2>
-                        <p class="text-brand-muted">This project is currently being documented.</p>
-                    </div>
-                    <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-                        <button onclick="navigate('home-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
-                            Return to Work
-                        </button>
-                    </div>
-                `;
-                document.getElementById('project-content').innerHTML = content;
-                document.getElementById('nav-project-title').innerText = "Project";
-                navigate('project-view');
-            }
-        }
+    if (id === 'studysphere') {
+        document.getElementById('project-content').innerHTML = studySphereContent;
+        document.getElementById('nav-project-title').innerText = "StudySphere";
+        window.location.hash = '#project/studysphere';
+    } else {
+        const content = `
+            ...
+        `;
+        document.getElementById('project-content').innerHTML = content;
+        document.getElementById('nav-project-title').innerText = "Project";
+        navigate('project-view');
+    }
+}
 
         function openArchiveDetail(id) {
     if (id === 'iwc-event') {
-        document.getElementById('archive-detail-content').innerHTML = iwcEventContent;
-        document.getElementById('nav-archive-title').innerText = "IWC Event Poster";
-        navigate('archive-detail-view');
+        window.location.hash = '#archive/iwc-event';
     } else if (id === 'chris-jill') {
-        document.getElementById('archive-detail-content').innerHTML = chrisJillContent;
-        document.getElementById('nav-archive-title').innerText = "Pencil Study";
-        navigate('archive-detail-view');
+        window.location.hash = '#archive/chris-jill';
     } else if (id === 'room-of-memories') {
-        document.getElementById('archive-detail-content').innerHTML = roomOfMemoriesContent;
-        document.getElementById('nav-archive-title').innerText = "Room of Memories";
-        navigate('archive-detail-view');
-    } else if (id === 'star-wars-ships') {
-        document.getElementById('archive-detail-content').innerHTML = starWarsShipsContent;
-        document.getElementById('nav-archive-title').innerText = "Star Wars Low-Poly Ships";
-        navigate('archive-detail-view');
+        window.location.hash = '#archive/room-of-memories';
     } else if (id === 'virtual-synesthesia') {
-    document.getElementById('archive-detail-content').innerHTML = virtualSynesthesiaContent;
-    document.getElementById('nav-archive-title').innerText = "Scents of Resilience";
-    navigate('archive-detail-view');
-    } else {
-        const content = `
-            <div class="reveal-up text-center pt-10">
-                <h2 class="text-2xl font-bold mb-8">Archive Item Details</h2>
-                <div class="w-full max-w-2xl mx-auto aspect-square bg-brand-border/20 rounded-md flex items-center justify-center text-brand-muted mb-8 border border-dashed border-brand-border/50">
-                    
-                </div>
-                <p class="text-[#4a4a52] max-w-lg mx-auto mb-10">This is a placeholder for the individual archive item page. You can add specific text, extra images, or context for this archive piece here.</p>
-                <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-                    <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
-                        Return to Archive
-                    </button>
-                </div>
-            </div>
-        `;
-        document.getElementById('archive-detail-content').innerHTML = content;
-        document.getElementById('nav-archive-title').innerText = "Archive Work";
-        navigate('archive-detail-view');
+        window.location.hash = '#archive/scents-of-resilience';
     }
 }
     </script>
