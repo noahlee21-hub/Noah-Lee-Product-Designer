@@ -119,18 +119,60 @@
             
             <!-- Hero Section -->
             <section class="px-6 md:px-12 max-w-[80rem] mx-auto pt-10 pb-16">
-                <div class="reveal-up">
-                    <h1 class="text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 text-brand-text max-w-4xl">
-                        Crafting intuitive digital experiences through art and technology.
-                    </h1>
-                    <p class="text-lg md:text-xl text-brand-muted font-medium max-w-2xl leading-relaxed mb-6">
-                        Product Designer & Media Artist based in New York and Seoul.
-                    </p>
-                    <p class="text-base text-brand-muted max-w-2xl leading-relaxed">
-                        I recently graduated from <a href="https://itp.nyu.edu/ima/" target="_blank" class="font-bold underline text-[#57068c] hover:text-brand-muted transition-colors">NYU Tisch School of the Arts with a B.F.A. in Interactive Media Arts</a>, and will be joining <a href="https://www.tc.columbia.edu/mathematics-science-and-technology/technology-media-and-learning/" target="_blank" class="font-bold underline text-[#003087] hover:text-brand-muted transition-colors">Teachers College, Columbia University as an M.A. student in Technology, Media and Learning</a>. By continuously expanding my toolkit across 3D design, multimedia, and product design methodologies, I strive to bridge the gap between aesthetic design and practical functionality.
-                    </p>
-                </div>
-            </section>
+    <div class="reveal-up grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_320px] gap-12 lg:gap-20">
+
+        <!-- LEFT -->
+        <div class="flex flex-col">
+
+            <!-- Top: Title -->
+            <div>
+                <h1 class="text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 text-brand-text max-w-4xl">
+                    Crafting intuitive digital experiences through art and technology.
+                </h1>
+            </div>
+
+            <!-- Bottom: Subtitle + Paragraph -->
+            <div class="mt-2">
+                <p class="text-lg md:text-xl text-brand-muted font-medium max-w-2xl leading-relaxed mb-6">
+                    Product Designer & Media Artist based in New York and Seoul.
+                </p>
+
+                <p class="text-base text-brand-muted max-w-2xl leading-relaxed">
+                    I recently graduated from 
+                    <a href="https://itp.nyu.edu/ima/" target="_blank" class="font-bold underline text-[#57068c] hover:text-brand-muted transition-colors">
+                        NYU Tisch School of the Arts with a B.F.A. in Interactive Media Arts
+                    </a>, and will be joining 
+                    <a href="https://www.tc.columbia.edu/mathematics-science-and-technology/technology-media-and-learning/" target="_blank" class="font-bold underline text-[#003087] hover:text-brand-muted transition-colors">
+                        Teachers College, Columbia University as an M.A. student in Technology, Media and Learning
+                    </a>. 
+                    By continuously expanding my toolkit across 3D design, multimedia, and product design methodologies, I strive to bridge the gap between aesthetic design and practical functionality.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="text-sm leading-relaxed text-brand-muted space-y-8 mt-[5.5rem] lg:mt-[5.5rem]">
+
+            <div>
+                <h3 class="text-brand-text font-semibold mb-2">Now</h3>
+                <p>Training Intern at EssilorLuxottica.</p>
+            </div>
+
+            <div>
+                <h3 class="text-brand-text font-semibold mb-2">Previous</h3>
+                <p>IWC Schaffhausen, Reimagined BK, and Enhance B.</p>
+            </div>
+
+            <div>
+                <h3 class="text-brand-text font-semibold mb-2">Education</h3>
+                <p>Incoming M.A. student at Teachers College, Columbia University; previously at NYU Tisch.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
             <!-- Work Section -->
             <section id="work-grid" class="px-6 md:px-12 max-w-[80rem] mx-auto py-10">
@@ -255,14 +297,14 @@
                         <p class="text-xs text-brand-muted mt-1">Illustration / 2026</p>
                     </div>
 
-                    <!-- 6. Placeholder Archive Item 3 -->
-                    <div class="group cursor-pointer" onclick="openArchiveDetail('placeholder-3')">
-                        <div class="aspect-[4/3] bg-brand-border/10 border border-dashed border-brand-border/50 mb-4 rounded-sm flex items-center justify-center text-brand-muted text-xs text-center px-4">
-                            
-                        </div>
-                        <h3 class="text-sm font-semibold text-brand-text">Noah's Boutique</h3>
-                        <p class="text-xs text-brand-muted mt-1">Minigame / 2024</p>
-                    </div>
+                    <!-- 6. Noah's Boutique -->
+<div class="group cursor-pointer" onclick="openArchiveDetail('noahs-boutique')">
+    <div class="aspect-[4/3] bg-brand-border/10 border border-dashed border-brand-border/50 mb-4 flex items-center justify-center text-brand-muted text-xs text-center px-4">
+        
+    </div>
+    <h3 class="text-sm font-semibold text-brand-text">Noah's Boutique</h3>
+    <p class="text-xs text-brand-muted mt-1">Interactive Minigame / 2024</p>
+</div>
 
                 </div>
             </section>
@@ -509,6 +551,10 @@ function applyRoute() {
         document.getElementById('archive-detail-content').innerHTML = starWarsShipsContent;
         document.getElementById('nav-archive-title').innerText = 'Star Wars Low-Poly Ships';
         navigate('archive-detail-view');
+        } else if (hash === '#archive/noahs-boutique') {
+    document.getElementById('archive-detail-content').innerHTML = noahsBoutiqueContent;
+    document.getElementById('nav-archive-title').innerText = "Noah's Boutique";
+    navigate('archive-detail-view');
     } else {
         window.location.hash = '#work';
     }
@@ -985,6 +1031,104 @@ window.addEventListener('DOMContentLoaded', applyRoute);
     </div>
 `;
 
+const noahsBoutiqueContent = `
+    <div class="reveal-up">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">Noah's Boutique</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Type</h4>
+                <p class="text-brand-muted">Personal Project (Interactive Minigame)</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Date</h4>
+                <p class="text-brand-muted">December 2024</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Tools</h4>
+                <p class="text-brand-muted">p5.js Editor (Handpose / ml5.js)</p>
+            </div>
+        </div>
+
+        <div class="project-body">
+            <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
+                Noah's Boutique is a small interactive minigame inspired by my personal interest in fashion and watches. I have always enjoyed visiting watch boutiques and observing how products are presented in curated retail environments, and this project translates that experience into a simple digital interaction.
+            </p>
+            <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
+                Using real-time hand tracking through p5.js, users can control their hand to select and drag fashion items on screen. The objective is to choose only the correct items and deliver them to the character within a limited time.
+            </p>
+            <p class="text-xl font-medium leading-relaxed mb-12 text-brand-text">
+                This project explores how gesture-based interaction can feel intuitive, while also revealing its limitations in precision, control, and usability.
+            </p>
+
+            <div class="placeholder-img my-8">[Insert Image: Main Game Screen – Noah's Boutique Title Screen (titlepage.png)]</div>
+
+            <h2>Gameplay & Interaction</h2>
+            <p>The game is built around a simple interaction: helping a character find the correct fashion items. Instead of using traditional mouse or touch input, the system relies entirely on hand gestures captured through the webcam.</p>
+            <p>Users pinch their thumb and index finger together to pick up an item, and release it by separating their fingers. This creates a more physical and embodied interaction, transforming a basic drag-and-drop mechanic into a gesture-based experience.</p>
+
+            <div class="placeholder-img my-8">[Insert Image: Instructions Screen (instructions.png)]</div>
+
+            <h2>Visual & Asset Design</h2>
+            <p>All visual assets, including the character and draggable objects, were generated using AI tools. I aimed to create a consistent and approachable visual style that aligns with the casual and playful tone of the game.</p>
+            <p>Each object was designed to be visually distinct so that users can quickly identify which items are correct and which should be avoided during gameplay.</p>
+
+            <h3>Character State Images</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                <div class="placeholder-img">[Insert Image: Neutral (human.png)]</div>
+                <div class="placeholder-img">[Insert Image: Success (happyimage.png)]</div>
+                <div class="placeholder-img">[Insert Image: Failure (sadimage.png)]</div>
+            </div>
+
+            <h3>Draggable Object Assets</h3>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 my-8">
+                <div class="placeholder-img">[Insert Image: Polo Shirt (poloshirt.png)]</div>
+                <div class="placeholder-img">[Insert Image: Skirt (skirt.png)]</div>
+                <div class="placeholder-img">[Insert Image: Watch (watch.png)]</div>
+                <div class="placeholder-img">[Insert Image: Shoes (shoes.png)]</div>
+                <div class="placeholder-img">[Insert Image: Incorrect Item (Rice) (rice.png)]</div>
+            </div>
+
+            <p>These assets visually demonstrate the core gameplay mechanic—distinguishing correct fashion items from incorrect objects.</p>
+
+            <h2>Interaction System</h2>
+            <p>The interaction system is powered by handpose tracking using ml5.js within the p5.js environment. I implemented a pinch detection mechanism by measuring the distance between the thumb and index finger, allowing users to pick up and release objects.</p>
+            <p>The drag behavior is mapped to the movement of the hand, enabling real-time interaction between the user and the interface.</p>
+            <p>While the interaction feels intuitive at a glance, I observed that performance depends heavily on factors such as hand position, distance from the camera, and movement speed.</p>
+
+            <div class="flex flex-col gap-6 my-8">
+                <div class="placeholder-img">[Insert Image: Gameplay Screenshot (hand tracking visible)]</div>
+                <div class="placeholder-img">[Insert Image: Successful Interaction (correct item delivered)]</div>
+                <div class="placeholder-img">[Insert Image: Failed Interaction (incorrect item delivered)]</div>
+                <div class="placeholder-img">[Optional Insert: Short GIF showing pinch → drag → drop interaction]</div>
+            </div>
+
+            <h2>Code Reference</h2>
+            <p>Instead of including full code, this section can show a partial screenshot of the p5.js editor or a small code snippet showing handpose detection logic, pinch detection condition, and drag-and-drop implementation.</p>
+
+            <div class="placeholder-img my-8">[Insert Image: p5.js editor screenshot or code snippet]</div>
+
+            <h2>Feedback & User Testing</h2>
+            <p>To evaluate the usability of the interaction, I gathered feedback from both a design student and a non-design user.</p>
+            <p>Maxine (NYU IMA student) suggested including clearer instructions about the optimal distance between the hand and the camera, and improving the visibility of the “How to Play” section by adjusting its size and color.</p>
+            <p>Victoria (non-design user) initially misunderstood the interaction, assuming it functioned like a touchscreen. She recommended clarifying that the game requires camera-based hand tracking. She also noted that the time limit felt too short and that interaction stability decreased near the lower part of the screen.</p>
+            <p>These observations highlighted the gap between intended interaction design and real user experience.</p>
+
+            <div class="placeholder-img my-8">[Insert Image: User Testing Photo (Maxine playing the game)]</div>
+
+            <h2>Reflection</h2>
+            <p>This project explores both the potential and limitations of gesture-based interaction. While the system creates an engaging and playful experience, it also reveals challenges in precision, responsiveness, and user onboarding.</p>
+            <p>Through this process, I learned that even simple interaction systems require careful consideration of clarity, affordance, and user expectation—especially when introducing unfamiliar input methods.</p>
+        </div>
+
+        <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+            <button onclick="window.location.hash='#archive'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                Return to Archive
+            </button>
+        </div>
+    </div>
+`;
+
         // Archive Content for Room of Memories (Newly Added)
         const roomOfMemoriesContent = `
             <div class="reveal-up">
@@ -1166,6 +1310,8 @@ window.addEventListener('DOMContentLoaded', applyRoute);
         window.location.hash = '#archive/scents-of-resilience';
     } else if (id === 'star-wars-ships') {
         window.location.hash = '#archive/star-wars-ships';
+    } else if (id === 'noahs-boutique') {
+        window.location.hash = '#archive/noahs-boutique';
     } else {
         document.getElementById('archive-detail-content').innerHTML = `
             <div class="reveal-up text-center pt-10">
