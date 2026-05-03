@@ -156,7 +156,7 @@
 
             <div>
                 <h3 class="text-brand-text font-semibold mb-2">Now</h3>
-                <p>Training Intern at EssilorLuxottica.</p>
+                <p>Training Intern at <a href="https://www.essilorluxottica.com/en/" target="_blank" class="font-bold underline text-[#000000] hover:text-brand-muted transition-colors">EssilorLuxottica</a>.</p>
             </div>
 
             <div>
@@ -209,8 +209,8 @@
                         </div>
                     </article>
 
-                    <!-- Placeholder Project 2 -->
-                    <article class="group cursor-pointer reveal-up" onclick="openProject('coming-soon')">
+                    <!-- Project 2: Leonardo Picks (May Edition) -->
+                    <article class="group cursor-pointer reveal-up" onclick="openProject('leonardo')">
                         <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
                             <div class="w-full md:w-1/2 lg:w-[45%]">
                                 <div class="img-zoom-container rounded-xl bg-brand-border/10 border border-dashed border-brand-border/50 overflow-hidden aspect-[4/3] flex items-center justify-center text-brand-muted text-sm text-center px-4">
@@ -219,12 +219,17 @@
                             </div>
                             <div class="w-full md:w-1/2 lg:w-[55%]">
                                 <div class="flex items-center gap-3 mb-4">
-                                    <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">Media Art</span>
+                                    <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">Visual Design</span>
+                                    <span class="w-1 h-1 bg-brand-border rounded-full"></span>
+                                    <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">2026</span>
                                 </div>
-                                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-brand-text group-hover:opacity-70 transition-opacity tracking-tight">Coming Soon</h3>
+                                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-brand-text group-hover:opacity-70 transition-opacity tracking-tight">Leonardo Picks — Monthly Content Poster</h3>
                                 <p class="text-base md:text-lg text-brand-muted mb-6 leading-relaxed max-w-lg">
-                                    Next project case study is currently being documented and will be uploaded shortly.
+                                    A monthly internal content poster designed for EssilorLuxottica employees, transforming training recommendations into a structured, editorial-style visual for improved readability and engagement.
                                 </p>
+                                <span class="text-sm font-bold border-b border-brand-text pb-0.5 group-hover:text-brand-muted group-hover:border-brand-muted transition-colors inline-flex items-center gap-1">
+                                    View Project <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </span>
                             </div>
                         </div>
                     </article>
@@ -318,9 +323,9 @@
                     
                     <!-- Profile Photo -->
                     <div class="w-full md:w-1/3 max-w-[240px]">
-                        <img src="https://drive.google.com/thumbnail?id=1_AUTO_e8nMY7jx6o5M71gU0-EuVTn3IO&sz=w1000" 
+                        <img src="https://drive.google.com/thumbnail?id=1nNhoN3m5Bx6jqp5EA3a3xHxfhy-TWi0x&sz=w1000" 
                              alt="Noah Lee" 
-                             class="w-full aspect-[4/5] object-cover rounded-md bg-brand-border/30 shadow-sm">
+                             class="w-full aspect-[4/5] object-cover rounded-md border border-brand-border shadow-sm">
                     </div>
 
                     <!-- Bio Text -->
@@ -331,7 +336,7 @@
                         
                         <div class="space-y-5 text-base text-[#4a4a52] leading-relaxed">
                             <p>
-                                I currently design and research to craft engaging digital experiences, constantly exploring the intersection of 3D environments and user-centric platforms.
+                                I currently support training initiatives at <a href="https://www.essilorluxottica.com/en/" target="_blank" class="font-bold underline text-brand-text hover:text-brand-muted transition-colors">EssilorLuxottica</a>, working with internal teams and retail partners while also creating visual content for education and communication.
                             </p>
                             <p>
                                 In my previous internships, I analyzed client relationships at <a href="https://www.iwc.com/us-en" target="_blank" class="font-bold underline text-brand-text hover:text-brand-muted transition-colors">IWC Schaffhausen</a>, shaped digital narratives at <a href="https://www.instagram.com/reimaginedbk/" target="_blank" class="font-bold underline text-brand-text hover:text-brand-muted transition-colors">Reimagined BK</a>, and designed 3D assets at <a href="https://en.enhance-beauty.com" target="_blank" class="font-bold underline text-brand-text hover:text-brand-muted transition-colors">Enhance B</a>.
@@ -530,6 +535,10 @@ function applyRoute() {
     } else if (hash === '#project/studysphere') {
         document.getElementById('project-content').innerHTML = studySphereContent;
         document.getElementById('nav-project-title').innerText = 'StudySphere';
+        navigate('project-view');
+    } else if (hash === '#project/leonardo') {
+        document.getElementById('project-content').innerHTML = leonardoContent;
+        document.getElementById('nav-project-title').innerText = 'Leonardo Picks';
         navigate('project-view');
     } else if (hash === '#archive/iwc-event') {
         document.getElementById('archive-detail-content').innerHTML = iwcEventContent;
@@ -782,6 +791,117 @@ window.addEventListener('DOMContentLoaded', applyRoute);
             </div>
         `;
 
+        // Project Content for Leonardo Picks 
+        const leonardoContent = `
+<div class="reveal-up">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">Leonardo Picks — Monthly Content Poster</h1>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+        <div>
+            <h4 class="font-semibold text-brand-text mb-1">Role</h4>
+            <p class="text-brand-muted">Training (Leonardo) Intern</p>
+        </div>
+        <div>
+            <h4 class="font-semibold text-brand-text mb-1">Date</h4>
+            <p class="text-brand-muted">May 2026</p>
+        </div>
+        <div>
+            <h4 class="font-semibold text-brand-text mb-1">Organization</h4>
+            <p class="text-brand-muted">EssilorLuxottica</p>
+        </div>
+        <div>
+            <h4 class="font-semibold text-brand-text mb-1">Tools</h4>
+            <p class="text-brand-muted">Figma</p>
+        </div>
+    </div>
+
+    <div class="project-body">
+
+        <h2>Short Description</h2>
+        <p>This project is a monthly internal content poster created for EssilorLuxottica employees, featuring curated learning materials from the Leonardo training platform.</p>
+        <p>Employees are required to complete a certain number of learning hours each year, and this poster was designed to make recommended content more engaging, accessible, and easy to navigate.</p>
+        <p>Rather than simply listing links, I redesigned the format into a structured, editorial-style layout that allows employees from various backgrounds to quickly scan and understand each content item.</p>
+
+        <div class="flex flex-col gap-8 my-12 items-center">
+            <div class="placeholder-img">[Insert Image: English Version Poster (Leonardo Picks – May)]</div>
+            <div class="placeholder-img">[Insert Image: Korean Version Poster (레오나르도 추천 컨텐츠 – 5월)]</div>
+        </div>
+
+        <h2>Context & Background</h2>
+        <p>Before I joined the team, recommended content was shared through simple internal emails that included only thumbnails and links.</p>
+        <p>This approach made it difficult for employees to quickly understand the purpose or relevance of each content item.</p>
+        <p>To improve this, I proposed a redesigned format that introduces:</p>
+
+        <ul>
+            <li>clearer hierarchy</li>
+            <li>short summaries for each content</li>
+            <li>consistent visual structure</li>
+            <li>improved readability across age groups and roles</li>
+        </ul>
+
+        <div class="placeholder-img my-8">[Insert Image: Previous Internal Email Format Screenshot]</div>
+        <p class="text-sm text-center text-brand-muted italic">"Previous internal email format used before redesign."</p>
+
+        <h2>Design Approach</h2>
+        <p>The poster was designed with a focus on clarity rather than artistic expression.</p>
+        <p>Since the audience includes employees across different departments and age groups, I aimed to create a layout that resembles a magazine or editorial page—structured, readable, and easy to scan.</p>
+        <p>Key design decisions include:</p>
+
+        <ul>
+            <li>strong typographic hierarchy (title → number → content)</li>
+            <li>use of red accents to guide attention</li>
+            <li>clear separation between content blocks</li>
+            <li>balanced image-text ratio</li>
+        </ul>
+
+        <div class="placeholder-img my-8">[Insert Image: Figma Working File Screenshot]</div>
+        <p class="text-sm text-center text-brand-muted italic">"Poster designed in Figma with a structured editorial layout."</p>
+
+        <h2>Content Curation Strategy</h2>
+        <p>Each month, I select and curate four pieces of content from the Leonardo platform, based on both company context and relevance to employees.</p>
+        <p>For this edition:</p>
+
+        <p><strong>Ray-Ban Meta Glasses</strong><br>
+        Included to support upcoming product launches in Korea and internal training sessions related to Meta smart eyewear.</p>
+
+        <p><strong>Stress Management</strong><br>
+        Selected in response to increased workload during the Meta product preparation period.<br>
+        (Content produced in collaboration with Harvard Business Publishing)</p>
+
+        <p><strong>Children’s Eye Care</strong><br>
+        Chosen to align with Family Month (May) in Korea, focusing on children’s vision care.</p>
+
+        <p><strong>Coach SS 2026: Omar Apollo</strong><br>
+        Selected as a lifestyle and brand-related content piece, reflecting both current trends and personal interest in fashion and culture.</p>
+
+        <h2>Bilingual Design Consideration</h2>
+        <p>Since the organization includes both local and international leadership, the poster was designed in both Korean and English.</p>
+        <p>This required:</p>
+
+        <ul>
+            <li>consistent layout across languages</li>
+            <li>adjusted typography for readability</li>
+            <li>maintaining tone and clarity in translation</li>
+        </ul>
+
+        <div class="placeholder-img my-8">[Insert Image: Final Internal Email Screenshot (with your poster attached)]</div>
+        <p class="text-sm text-center text-brand-muted italic">"Final poster distributed to employees via internal email."</p>
+
+        <h2>Reflection</h2>
+        <p>This project allowed me to apply design thinking in a real corporate environment, balancing clarity, usability, and visual communication.</p>
+        <p>Unlike academic or artistic projects, this work required prioritizing accessibility and immediate comprehension over expressive design.</p>
+        <p>Through this process, I learned how small structural improvements—such as hierarchy, spacing, and content framing—can significantly impact how information is received and understood.</p>
+
+    </div>
+
+    <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+        <button onclick="window.location.hash='#work'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+            Return to Work
+        </button>
+    </div>
+</div>
+`;
+
         // Archive Content for IWC Event Poster
         const iwcEventContent = `
             <div class="reveal-up">
@@ -864,10 +984,10 @@ window.addEventListener('DOMContentLoaded', applyRoute);
 
                 <div class="project-body">
                     <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
-                        This drawing is part of a personal sketch series inspired by characters from Resident Evil 5.
+                        This drawing is part of a personal sketch series inspired by characters from <a href="https://store.steampowered.com/app/21690/Resident_Evil_5/" target="_blank" class="font-bold underline text-[#000000] hover:text-brand-muted transition-colors"> Resident Evil 5</a>.
                     </p>
                     <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
-                        The characters Chris Redfield and Jill Valentine are long-standing partners in the series. While working on this drawing, I was reminded of a graduation photo I took with my childhood friend Violet Hyun. We first met as children and later reunited years later as friends in the same university program, which made our graduation moment especially meaningful.
+                        The characters <a href="https://residentevil.fandom.com/wiki/Chris_Redfield" target="_blank" class="font-bold underline text-[#000000] hover:text-brand-muted transition-colors">Chris Redfield</a> and <a href="https://residentevil.fandom.com/wiki/Jill_Valentine" target="_blank" class="font-bold underline text-[#000000] hover:text-brand-muted transition-colors">Jill Valentine</a> are long-standing partners in the series. While working on this drawing, I was reminded of a graduation photo I took with my childhood friend Violet Hyun. We first met as children and later reunited years later as friends in the same university program, which made our graduation moment especially meaningful.
                     </p>
                     <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
                         When we planned the photo, I suggested posing like field agents-not just because I liked the game series, but because the enduring partnership between these characters felt similar to the story of our own friendship.
@@ -921,7 +1041,7 @@ window.addEventListener('DOMContentLoaded', applyRoute);
                     </div>
                 <div>
                         <h4 class="font-semibold text-brand-text mb-1">Date</h4>
-                        <p class="text-brand-muted">September 2025</p>
+                        <p class="text-brand-muted">Sep 2025</p>
                 </div>
                 <div>
                     <h4 class="font-semibold text-brand-text mb-1">Category</h4>
@@ -1042,7 +1162,7 @@ const noahsBoutiqueContent = `
             </div>
             <div>
                 <h4 class="font-semibold text-brand-text mb-1">Date</h4>
-                <p class="text-brand-muted">December 2024</p>
+                <p class="text-brand-muted">Dec 2024</p>
             </div>
             <div>
                 <h4 class="font-semibold text-brand-text mb-1">Tools</h4>
@@ -1051,6 +1171,13 @@ const noahsBoutiqueContent = `
         </div>
 
         <div class="project-body">
+            <h2>Overview</h2>
+                    <p class="mb-6">
+    <a href="https://editor.p5js.org/smlee_imanoah/full/xbLMv5Ngt" target="_blank" 
+       class="font-semibold underline text-brand-text hover:text-brand-muted transition-colors">
+        Play Game↗
+    </a>
+</p>
             <p class="text-xl font-medium leading-relaxed mb-6 text-brand-text">
                 Noah's Boutique is a small interactive minigame inspired by my personal interest in fashion and watches. I have always enjoyed visiting watch boutiques and observing how products are presented in curated retail environments, and this project translates that experience into a simple digital interaction.
             </p>
@@ -1137,7 +1264,7 @@ const noahsBoutiqueContent = `
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
                     <div>
                         <h4 class="font-semibold text-brand-text mb-1">Role</h4>
-                        <p class="text-brand-muted">Concept, Design, Development — Noah Lee</p>
+                        <p class="text-brand-muted">Concept, Design, Development</p>
                     </div>
                     <div>
                         <h4 class="font-semibold text-brand-text mb-1">Date</h4>
@@ -1187,10 +1314,7 @@ const noahsBoutiqueContent = `
 
                     <div class="flex flex-col items-center gap-6 my-12">
 
-    <!-- 상단: 인터뷰 요청 스크린샷 -->
-    <img src="https://drive.google.com/thumbnail?id=1OHV250JHpqjHTqu7m5fkLVD_ZNfjGWQu&sz=w1200"
-         alt="Interview request screenshot"
-         class="w-full max-w-[320px] md:max-w-[320px]">
+   
 
     <!-- 하단: 2개 이미지 -->
     <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
@@ -1282,6 +1406,8 @@ const noahsBoutiqueContent = `
         function openProject(id) {
     if (id === 'studysphere') {
         window.location.hash = '#project/studysphere';
+    } else if (id === 'leonardo') {
+        window.location.hash = '#project/leonardo';
     } else {
         document.getElementById('project-content').innerHTML = `
             <div class="reveal-up text-center pt-20">
