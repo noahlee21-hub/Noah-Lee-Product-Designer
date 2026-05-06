@@ -213,8 +213,10 @@
                     <article class="group cursor-pointer reveal-up" onclick="openProject('leonardo')">
                         <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
                             <div class="w-full md:w-1/2 lg:w-[45%]">
-                                <div class="img-zoom-container rounded-xl bg-brand-border/10 border border-dashed border-brand-border/50 overflow-hidden aspect-[4/3] flex items-center justify-center text-brand-muted text-sm text-center px-4">
-                                    
+                                <div class="img-zoom-container rounded-xl bg-brand-border/30 overflow-hidden aspect-[4/3]">
+                                    <img src="https://drive.google.com/thumbnail?id=1Jtjv-i8iiR9u2VYB1A_LMlEboY1fJVQP&sz=w1000"
+                                        alt="Leonardo Picks Thumbnail"
+                                        class="w-full h-full object-cover">
                                 </div>
                             </div>
                             <div class="w-full md:w-1/2 lg:w-[55%]">
@@ -473,7 +475,7 @@
             <div class="flex gap-6">
                 <a href="mailto:sukminlee21@gmail.com" class="hover:text-brand-muted transition-colors">Email</a>
                 <a href="https://www.linkedin.com/in/noah-lee-766930235/" target="_blank" class="hover:text-brand-muted transition-colors">LinkedIn</a>
-                <a href="https://drive.google.com/file/d/1zKvVGnzv_cQgDPYdqP1EdfWK-GVEfTYS/view?usp=share_link" target="_blank" class="hover:text-brand-muted transition-colors">Resume</a>
+                <a href="https://drive.google.com/file/d/1G-hyAMXXldH4MwZZKuYVABtOQ9ofbdz9/view?usp=share_link" target="_blank" class="hover:text-brand-muted transition-colors">Resume</a>
             </div>
             <div class="text-brand-muted text-xs">
                 &copy; 2026 Noah Lee
@@ -822,10 +824,20 @@ window.addEventListener('DOMContentLoaded', applyRoute);
         <p>Employees are required to complete a certain number of learning hours each year, and this poster was designed to make recommended content more engaging, accessible, and easy to navigate.</p>
         <p>Rather than simply listing links, I redesigned the format into a structured, editorial-style layout that allows employees from various backgrounds to quickly scan and understand each content item.</p>
 
-        <div class="flex flex-col gap-8 my-12 items-center">
-            <div class="placeholder-img">[Insert Image: English Version Poster (Leonardo Picks – May)]</div>
-            <div class="placeholder-img">[Insert Image: Korean Version Poster (레오나르도 추천 컨텐츠 – 5월)]</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+        <div class="flex justify-center">
+            <img src="https://drive.google.com/thumbnail?id=18SPLyHUtShW5kCakGVh0b9vQN6if3wql&sz=w1200"
+                alt="English Version Poster"
+                class="w-full max-w-[420px]">
         </div>
+        <div class="flex justify-center">
+            <img src="https://drive.google.com/thumbnail?id=13RPhPCimaNBIYsmW7gL6ofGBqy2oJdEO&sz=w1200"
+                alt="Korean Version Poster"
+                class="w-full max-w-[420px]">
+        </div>
+
+    </div>
 
         <h2>Context & Background</h2>
         <p>Before I joined the team, recommended content was shared through simple internal emails that included only thumbnails and links.</p>
@@ -839,7 +851,11 @@ window.addEventListener('DOMContentLoaded', applyRoute);
             <li>improved readability across age groups and roles</li>
         </ul>
 
-        <div class="placeholder-img my-8">[Insert Image: Previous Internal Email Format Screenshot]</div>
+        <div class="my-12 flex justify-center">
+            <img src="https://drive.google.com/thumbnail?id=1WGgzmdfmI6zRROo5-GviVe7O_7Y2YbG_&sz=w1200"
+                alt="Previous Internal Email Format Screenshot"
+                class="w-full max-w-[320px] md:max-w-[500px]">
+        </div>
         <p class="text-sm text-center text-brand-muted italic">"Previous internal email format used before redesign."</p>
 
         <h2>Design Approach</h2>
@@ -854,7 +870,11 @@ window.addEventListener('DOMContentLoaded', applyRoute);
             <li>balanced image-text ratio</li>
         </ul>
 
-        <div class="placeholder-img my-8">[Insert Image: Figma Working File Screenshot]</div>
+        <div class="my-12 flex justify-center">
+            <img src="https://drive.google.com/thumbnail?id=1WSvsmfRkqaLojX4Nb8_ZSKrA4CNviqCU&sz=w1200"
+                alt="Figma Working File Screenshot"
+                class="w-full max-w-[320px] md:max-w-[600px]">
+        </div>
         <p class="text-sm text-center text-brand-muted italic">"Poster designed in Figma with a structured editorial layout."</p>
 
         <h2>Content Curation Strategy</h2>
@@ -1231,8 +1251,6 @@ const noahsBoutiqueContent = `
             </div>
 
             <h2>Code Reference</h2>
-            <p>Instead of including full code, this section can show a partial screenshot of the p5.js editor or a small code snippet showing handpose detection logic, pinch detection condition, and drag-and-drop implementation.</p>
-
             <div class="placeholder-img my-8">[Insert Image: p5.js editor screenshot or code snippet]</div>
 
             <h2>Feedback & User Testing</h2>
