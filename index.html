@@ -1124,7 +1124,7 @@ window.addEventListener('DOMContentLoaded', applyRoute);
                 Noah Lee – Designer
             </p>
 
-            <h2>Role – Noah Lee</h2>
+            <h2>My Role</h2>
             <p>
                 Focused on user interviews and visual design. Conducted interviews with participants affected by smell dysfunction and translated their experiences into visual storytelling. Designed a series of posters, including narrative-focused pieces that communicate how individuals adapt emotionally and behaviorally to smell loss.
             </p>
@@ -1208,33 +1208,83 @@ const noahsBoutiqueContent = `
                 This project explores how gesture-based interaction can feel intuitive, while also revealing its limitations in precision, control, and usability.
             </p>
 
-            <div class="placeholder-img my-8">[Insert Image: Main Game Screen – Noah's Boutique Title Screen (titlepage.png)]</div>
+            <div class="my-12 flex justify-center">
+                <img src="https://drive.google.com/thumbnail?id=1r3SPXWF6btaTEjVIlMDEyE-3McMwOxTr&sz=w1200"
+                    alt="Noah's Boutique Title Screen"
+                    class="w-full max-w-[500px]">
+            </div>
 
             <h2>Gameplay & Interaction</h2>
             <p>The game is built around a simple interaction: helping a character find the correct fashion items. Instead of using traditional mouse or touch input, the system relies entirely on hand gestures captured through the webcam.</p>
             <p>Users pinch their thumb and index finger together to pick up an item, and release it by separating their fingers. This creates a more physical and embodied interaction, transforming a basic drag-and-drop mechanic into a gesture-based experience.</p>
 
-            <div class="placeholder-img my-8">[Insert Image: Instructions Screen (instructions.png)]</div>
+            <div class="my-12 flex justify-center">
+                <img src="https://drive.google.com/thumbnail?id=1Dx_uO9Ou_JKYg5ZjAH_CFSW3yl0NuERC&sz=w1200"
+                    alt="Instructions Screen"
+                    class="w-full max-w-[500px]">
+            </div>
 
             <h2>Visual & Asset Design</h2>
             <p>All visual assets, including the character and draggable objects, were generated using AI tools. I aimed to create a consistent and approachable visual style that aligns with the casual and playful tone of the game.</p>
             <p>Each object was designed to be visually distinct so that users can quickly identify which items are correct and which should be avoided during gameplay.</p>
 
             <h3>Character State Images</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-                <div class="placeholder-img">[Insert Image: Neutral (human.png)]</div>
-                <div class="placeholder-img">[Insert Image: Success (happyimage.png)]</div>
-                <div class="placeholder-img">[Insert Image: Failure (sadimage.png)]</div>
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+
+    <div class="flex justify-center">
+        <img src="https://drive.google.com/thumbnail?id=1mxJNYqL0EPQFsa64y9Lc7OH1Uk61jH8X&sz=w1000"
+             alt="Neutral Character"
+             class="w-full max-w-[220px]">
+    </div>
+
+    <div class="flex justify-center">
+        <img src="https://drive.google.com/thumbnail?id=14uB4N-jwyw9KLHxl4OHIyEOiS2f3bMhk&sz=w1000"
+             alt="Success Character"
+             class="w-full max-w-[220px]">
+    </div>
+
+    <div class="flex justify-center">
+        <img src="https://drive.google.com/thumbnail?id=1GEmuIkietAUaXgffw0tBt7Ghv_CaCyL6&sz=w1000"
+             alt="Failure Character"
+             class="w-full max-w-[220px]">
+    </div>
+
+</div>
 
             <h3>Draggable Object Assets</h3>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 my-8">
-                <div class="placeholder-img">[Insert Image: Polo Shirt (poloshirt.png)]</div>
-                <div class="placeholder-img">[Insert Image: Skirt (skirt.png)]</div>
-                <div class="placeholder-img">[Insert Image: Watch (watch.png)]</div>
-                <div class="placeholder-img">[Insert Image: Shoes (shoes.png)]</div>
-                <div class="placeholder-img">[Insert Image: Incorrect Item (Rice) (rice.png)]</div>
-            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 my-12">
+
+    <div class="flex justify-center">
+        <img src="https://drive.google.com/thumbnail?id=1gGF4mtQjPUaFFunTEJe5sADAB36EzN6C&sz=w1000"
+             alt="Polo Shirt"
+             class="w-full max-w-[160px]">
+    </div>
+
+    <div class="flex justify-center">
+        <img src="https://drive.google.com/thumbnail?id=16I6GJW2SphNFyzJT2jwIFvRcS4qnJslT&sz=w1000"
+             alt="Skirt"
+             class="w-full max-w-[160px]">
+    </div>
+
+    <div class="flex justify-center">
+        <img src="https://drive.google.com/thumbnail?id=1nZ9oLEb8SnLPtp5fFQPIr1UOiWVECVg8&sz=w1000"
+             alt="Watch"
+             class="w-full max-w-[160px]">
+    </div>
+
+    <div class="flex justify-center">
+        <img src="https://drive.google.com/thumbnail?id=1KBoQWdhA63Gbt-y0gz8R87GnBFBJKCnm&sz=w1000"
+             alt="Shoes"
+             class="w-full max-w-[160px]">
+    </div>
+
+    <div class="flex justify-center">
+        <img src="https://drive.google.com/thumbnail?id=1d_pdQg8MSiLSMXtJC5-uOKid4KybX1sC&sz=w1000"
+             alt="Incorrect Item"
+             class="w-full max-w-[160px]">
+    </div>
+
+</div>
 
             <p>These assets visually demonstrate the core gameplay mechanic—distinguishing correct fashion items from incorrect objects.</p>
 
@@ -1259,7 +1309,11 @@ const noahsBoutiqueContent = `
             <p>Victoria (non-design user) initially misunderstood the interaction, assuming it functioned like a touchscreen. She recommended clarifying that the game requires camera-based hand tracking. She also noted that the time limit felt too short and that interaction stability decreased near the lower part of the screen.</p>
             <p>These observations highlighted the gap between intended interaction design and real user experience.</p>
 
-            <div class="placeholder-img my-8">[Insert Image: User Testing Photo (Maxine playing the game)]</div>
+            <div class="my-12 flex justify-center">
+    <img src="https://drive.google.com/thumbnail?id=1sY0PyAQGjGLoV0rBmN9FRo7969AI0GWt&sz=w1200"
+         alt="User Testing"
+         class="w-full max-w-[500px]">
+</div>
 
             <h2>Reflection</h2>
             <p>This project explores both the potential and limitations of gesture-based interaction. While the system creates an engaging and playful experience, it also reveals challenges in precision, responsiveness, and user onboarding.</p>
