@@ -44,18 +44,17 @@
     display: block;
 }
 
-        .img-zoom-container { overflow: hidden; }
-        .img-zoom-container img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .group:hover .img-zoom-container img { transform: scale(1.03); }
+        .img-zoom-container {
+            overflow: hidden;
+        }
 
         .reveal-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 1;
+            transform: none;
         }
         .reveal-up.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
         }
 
         ::selection {
@@ -254,7 +253,7 @@
                     <!-- 1. IWC Event Poster -->
                     <div class="group cursor-pointer" onclick="openArchiveDetail('iwc-event')">
                         <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
-                            <img src="https://drive.google.com/thumbnail?id=1OzWb3Ium3M5Bl6_By75cTa0m_I9ewJih&sz=w800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="IWC Event Poster">
+                            <img src="https://drive.google.com/thumbnail?id=1OzWb3Ium3M5Bl6_By75cTa0m_I9ewJih&sz=w800" class="w-full h-full object-cover" alt="IWC Event Poster">
                         </div>
                         <h3 class="text-sm font-semibold text-brand-text">IWC Event Poster</h3>
                         <p class="text-xs text-brand-muted mt-1">Visual Design / 2025</p>
@@ -266,7 +265,7 @@
     <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
         <img src="https://drive.google.com/thumbnail?id=1ABgEEN6VZgTgsJTShzsUZgKwb2vmsEF1&sz=w1200"
              alt="Scents of Resilience Thumbnail"
-             class="block w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+             class="block w-full h-full object-cover">
     </div>
     <h3 class="text-sm font-semibold text-brand-text">Scents of Resilience (Virtual Synesthesia Exhibition)</h3>
     <p class="text-xs text-brand-muted mt-1">Exhibition / 2024</p>
@@ -277,7 +276,7 @@
 <div class="group cursor-pointer" onclick="openArchiveDetail('room-of-memories')">
     <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
         <img src="https://drive.google.com/thumbnail?id=1Ruq_K5UaXWBjbs7x9rBr1_ZOAGBrseMM&sz=w800"
-             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+             class="w-full h-full object-cover"
              alt="Room of Memories Thumbnail">
     </div>
     <h3 class="text-sm font-semibold text-brand-text">Room of Memories</h3>
@@ -288,7 +287,7 @@
 <div class="group cursor-pointer" onclick="openArchiveDetail('star-wars-ships')">
     <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
         <img src="https://drive.google.com/thumbnail?id=1VL_btc1IzWAakfm_vuuxCdoCXJaZRn9k&sz=w800" 
-             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+             class="w-full h-full object-cover" 
              alt="X-Wing Render">
     </div>
     <h3 class="text-sm font-semibold text-brand-text">Star Wars Low-Poly Ships</h3>
@@ -298,7 +297,7 @@
                     <!-- 5. Archive Item: Chris & Jill -->
                     <div class="group cursor-pointer" onclick="openArchiveDetail('chris-jill')">
                         <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
-                            <img src="https://drive.google.com/thumbnail?id=1DZvPYFPM4kYTtPgV9H78HmHCnKNPfOGS&sz=w800" class="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105" alt="Final Pencil Drawing - Chris Redfield & Jill Valentine">
+                            <img src="https://drive.google.com/thumbnail?id=1DZvPYFPM4kYTtPgV9H78HmHCnKNPfOGS&sz=w800" class="w-full h-full object-cover object-[center_20%]" alt="Final Pencil Drawing - Chris Redfield & Jill Valentine">
                         </div>
                         <h3 class="text-sm font-semibold text-brand-text">Chris Redfield & Jill Valentine Pencil Study</h3>
                         <p class="text-xs text-brand-muted mt-1">Illustration / 2026</p>
@@ -402,7 +401,7 @@
                         <div>
                             <div class="aspect-square overflow-hidden bg-brand-border/20 mb-3 rounded-sm">
                                 <img src="https://drive.google.com/thumbnail?id=1vv13WZuarqpBieKAA3Pio5AwS_u0zGAj&sz=w800" 
-                                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Golfing"/>
+                                     class="w-full h-full object-cover" alt="Golfing"/>
                             </div>
                             <h4 class="text-sm font-medium text-brand-text mb-1">Golfing</h4>
                             <p class="text-xs text-brand-muted leading-relaxed">Finding balance and focus on the fairway.</p>
@@ -410,7 +409,7 @@
                         <div>
                             <div class="aspect-square overflow-hidden bg-brand-border/20 mb-3 rounded-sm">
                                 <img src="https://drive.google.com/thumbnail?id=1Rw2ih90OpASRVcCxlmUOZOSA2D6KucL_&sz=w800" 
-                                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Gaming"/>
+                                     class="w-full h-full object-cover" alt="Gaming"/>
                             </div>
                             <h4 class="text-sm font-medium text-brand-text mb-1">Gaming</h4>
                             <p class="text-xs text-brand-muted leading-relaxed">Analyzing game mechanics and exploring new realms.</p>
@@ -418,7 +417,7 @@
                         <div>
                             <div class="aspect-square overflow-hidden bg-brand-border/20 mb-3 rounded-sm">
                                 <img src="https://drive.google.com/thumbnail?id=1ERkegn5fpEIcvD7ysv1g6GqstE--hcrO&sz=w800" 
-                                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Socializing"/>
+                                     class="w-full h-full object-cover" alt="Socializing"/>
                             </div>
                             <h4 class="text-sm font-medium text-brand-text mb-1">Socializing</h4>
                             <p class="text-xs text-brand-muted leading-relaxed">Sharing laughs and building memories with my closest friends.</p>
@@ -426,7 +425,7 @@
                         <div>
                             <div class="aspect-square overflow-hidden bg-brand-border/20 mb-3 rounded-sm">
                                 <img src="https://drive.google.com/thumbnail?id=1CXBNa0_FputN6I7VpUUfwG6gWDkwvNXa&sz=w800" 
-                                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Watch Collecting"/>
+                                     class="w-full h-full object-cover" alt="Watch Collecting"/>
                             </div>
                             <h4 class="text-sm font-medium text-brand-text mb-1">Horology</h4>
                             <p class="text-xs text-brand-muted leading-relaxed">Appreciating the intricate micro-engineering of timepieces.</p>
@@ -966,10 +965,10 @@ window.addEventListener('DOMContentLoaded', applyRoute);
                     <h2>Event Photos</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         <div class="overflow-hidden">
-                            <img src="https://drive.google.com/thumbnail?id=1DEkUicu9Py7wRLjiHTdSjWGDqNptQRVu&sz=w800" alt="IWC Coffee Cart Setup" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                            <img src="https://drive.google.com/thumbnail?id=1DEkUicu9Py7wRLjiHTdSjWGDqNptQRVu&sz=w800" alt="IWC Coffee Cart Setup" class="w-full aspect-[3/4] object-cover">
                         </div>
                         <div class="overflow-hidden">
-                            <img src="https://drive.google.com/thumbnail?id=1UN_OqiGDhwvfQxq_Df7pME_uaC_HFUZd&sz=w800" alt="IWC Event Visitors" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                            <img src="https://drive.google.com/thumbnail?id=1UN_OqiGDhwvfQxq_Df7pME_uaC_HFUZd&sz=w800" alt="IWC Event Visitors" class="w-full aspect-[3/4] object-cover">
                         </div>
                     </div>
                 </div>
@@ -1030,13 +1029,13 @@ window.addEventListener('DOMContentLoaded', applyRoute);
                     <p>These photos provide context for the personal inspiration behind the drawing.</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                         <div class="overflow-hidden">
-                            <img src="https://drive.google.com/thumbnail?id=1yXTo0bWVDaP8RWHmCtn22Ka0TfRsRdy-&sz=w1000" alt="Graduation Photo 1" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                            <img src="https://drive.google.com/thumbnail?id=1yXTo0bWVDaP8RWHmCtn22Ka0TfRsRdy-&sz=w1000" alt="Graduation Photo 1" class="w-full aspect-[3/4] object-cover">
                         </div>
                         <div class="overflow-hidden">
-                            <img src="https://drive.google.com/thumbnail?id=1v3oxj9CfkVQRB-uILUN0Q6QPvD4DR_qm&sz=w1000" alt="Graduation Photo 2" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                            <img src="https://drive.google.com/thumbnail?id=1v3oxj9CfkVQRB-uILUN0Q6QPvD4DR_qm&sz=w1000" alt="Graduation Photo 2" class="w-full aspect-[3/4] object-cover">
                         </div>
                         <div class="overflow-hidden">
-                            <img src="https://drive.google.com/thumbnail?id=1YN5Zk2LX7-Jgyn0yFxxc471sbl16H5K8&sz=w1000" alt="Graduation Photo 3" class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700">
+                            <img src="https://drive.google.com/thumbnail?id=1YN5Zk2LX7-Jgyn0yFxxc471sbl16H5K8&sz=w1000" alt="Graduation Photo 3" class="w-full aspect-[3/4] object-cover">
                         </div>
                     </div>
                 </div>
