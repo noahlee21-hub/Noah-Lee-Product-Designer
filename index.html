@@ -208,32 +208,43 @@
                         </div>
                     </article>
 
-                    <!-- Project 2: Leonardo Picks (May Edition) -->
-                    <article class="group cursor-pointer reveal-up" onclick="openProject('leonardo')">
-                        <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
-                            <div class="w-full md:w-1/2 lg:w-[45%]">
-                                <div class="img-zoom-container rounded-xl bg-brand-border/30 overflow-hidden aspect-[4/3]">
-                                    <img src="https://drive.google.com/thumbnail?id=1Jtjv-i8iiR9u2VYB1A_LMlEboY1fJVQP&sz=w1000"
-                                        alt="Leonardo Picks Thumbnail"
-                                        class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2 lg:w-[55%]">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">Visual Design</span>
-                                    <span class="w-1 h-1 bg-brand-border rounded-full"></span>
-                                    <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">2026</span>
-                                </div>
-                                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-brand-text group-hover:opacity-70 transition-opacity tracking-tight">Leonardo Picks — Monthly Content Poster</h3>
-                                <p class="text-base md:text-lg text-brand-muted mb-6 leading-relaxed max-w-lg">
-                                    A monthly internal content poster designed for EssilorLuxottica employees, transforming training recommendations into a structured, editorial-style visual for improved readability and engagement.
-                                </p>
-                                <span class="text-sm font-bold border-b border-brand-text pb-0.5 group-hover:text-brand-muted group-hover:border-brand-muted transition-colors inline-flex items-center gap-1">
-                                    View Project <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </article>
+                    <!-- Project 2: New Project -->
+<article class="group cursor-pointer reveal-up" onclick="openProject('new-project')">
+    <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
+        <div class="w-full md:w-1/2 lg:w-[45%]">
+            <div class="img-zoom-container rounded-xl bg-brand-border/30 overflow-hidden aspect-[4/3] flex items-center justify-center border border-dashed border-brand-border">
+                <span class="text-sm font-medium text-brand-muted">
+                    Coming Soon
+                </span>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-[55%]">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">
+                    Upcoming Project
+                </span>
+                <span class="w-1 h-1 bg-brand-border rounded-full"></span>
+                <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">
+                    TBA
+                </span>
+            </div>
+
+            <h3 class="text-3xl md:text-4xl font-bold mb-4 text-brand-text group-hover:opacity-70 transition-opacity tracking-tight">
+                New Project
+            </h3>
+
+            <p class="text-base md:text-lg text-brand-muted mb-6 leading-relaxed max-w-lg">
+                A new featured project is currently in development.
+            </p>
+
+            <span class="text-sm font-bold border-b border-brand-text pb-0.5 group-hover:text-brand-muted group-hover:border-brand-muted transition-colors inline-flex items-center gap-1">
+                View Project
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+        </div>
+    </div>
+</article>
 
                 </div>
             </section>
@@ -259,7 +270,25 @@
                         <p class="text-xs text-brand-muted mt-1">Visual Design / 2025</p>
                     </div>
 
-                    <!-- 2. Virtual Synesthesia Exhibition -->
+                    <!-- 2. Leonardo Picks -->
+<div class="group cursor-pointer" onclick="openArchiveDetail('leonardo')">
+    <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
+        <img
+            src="https://drive.google.com/thumbnail?id=1Jtjv-i8iiR9u2VYB1A_LMlEboY1fJVQP&sz=w1200"
+            class="w-full h-full object-cover"
+            alt="Leonardo Picks Thumbnail">
+    </div>
+
+    <h3 class="text-sm font-semibold text-brand-text">
+        Leonardo Picks — Monthly Content Poster
+    </h3>
+
+    <p class="text-xs text-brand-muted mt-1">
+        Visual Design / 2026
+    </p>
+</div>
+
+                    <!-- 3. Virtual Synesthesia Exhibition -->
 <!-- 2. Scents of Resilience -->
 <div class="group cursor-pointer" onclick="openArchiveDetail('virtual-synesthesia')">
     <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
@@ -271,8 +300,8 @@
     <p class="text-xs text-brand-muted mt-1">Exhibition / 2024</p>
 </div>
 
-                    <!-- 3. Room of Memories (Replaced Washington Square News) -->
-                    <!-- 3. Room of Memories -->
+                    <!-- 4. Room of Memories (Replaced Washington Square News) -->
+                    <!-- 4. Room of Memories -->
 <div class="group cursor-pointer" onclick="openArchiveDetail('room-of-memories')">
     <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
         <img src="https://drive.google.com/thumbnail?id=1Ruq_K5UaXWBjbs7x9rBr1_ZOAGBrseMM&sz=w800"
@@ -283,7 +312,7 @@
     <p class="text-xs text-brand-muted mt-1">Capstone Project / 2025</p>
 </div>
 
-                    <!-- 4. Star Wars Low-Poly Ships -->
+                    <!-- 5. Star Wars Low-Poly Ships -->
 <div class="group cursor-pointer" onclick="openArchiveDetail('star-wars-ships')">
     <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
         <img src="https://drive.google.com/thumbnail?id=1VL_btc1IzWAakfm_vuuxCdoCXJaZRn9k&sz=w800" 
@@ -294,7 +323,7 @@
     <p class="text-xs text-brand-muted mt-1">3D Modeling / 2025</p>
 </div>
 
-                    <!-- 5. Archive Item: Chris & Jill -->
+                    <!-- 6. Archive Item: Chris & Jill -->
                     <div class="group cursor-pointer" onclick="openArchiveDetail('chris-jill')">
                         <div class="aspect-[4/3] bg-brand-border/20 overflow-hidden mb-4 rounded-sm">
                             <img src="https://drive.google.com/thumbnail?id=1DZvPYFPM4kYTtPgV9H78HmHCnKNPfOGS&sz=w800" class="w-full h-full object-cover object-[center_20%]" alt="Final Pencil Drawing - Chris Redfield & Jill Valentine">
@@ -303,7 +332,7 @@
                         <p class="text-xs text-brand-muted mt-1">Illustration / 2026</p>
                     </div>
 
-                    <!-- 6. Noah's Boutique -->
+                    <!-- 7. Noah's Boutique -->
 <div class="group cursor-pointer" onclick="openArchiveDetail('noahs-boutique')">
     <div class="aspect-[4/3] bg-brand-border/10 border border-dashed border-brand-border/50 mb-4 flex items-center justify-center text-brand-muted text-xs text-center px-4">
         
@@ -311,6 +340,8 @@
     <h3 class="text-sm font-semibold text-brand-text">Noah's Boutique</h3>
     <p class="text-xs text-brand-muted mt-1">Interactive Minigame / 2024</p>
 </div>
+
+
 
                 </div>
             </section>
@@ -439,7 +470,7 @@
         <!-- ================= 4. PROJECT DETAIL VIEW ================= -->
         <div id="project-view" class="view-section bg-brand-bg min-h-screen">
             <nav class="fixed w-full top-0 z-50 bg-brand-bg/90 backdrop-blur-md py-4 md:py-6 px-5 md:px-12 flex justify-between items-center border-b border-brand-border/50">
-                <button onclick="navigate('home-view')" class="text-brand-muted hover:text-brand-text transition-colors flex items-center gap-2 text-sm font-medium">
+                <button onclick="window.location.hash='#work'" class="text-brand-muted hover:text-brand-text transition-colors flex items-center gap-2 text-sm font-medium">
                     <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
                 </button>
                 <span class="font-semibold text-sm tracking-tight text-brand-text" id="nav-project-title">StudySphere</span>
@@ -454,7 +485,7 @@
         <!-- ================= 5. ARCHIVE DETAIL VIEW ================= -->
         <div id="archive-detail-view" class="view-section bg-brand-bg min-h-screen">
             <nav class="fixed w-full top-0 z-50 bg-brand-bg/90 backdrop-blur-md py-4 md:py-6 px-5 md:px-12 flex justify-between items-center border-b border-brand-border/50">
-                <button onclick="navigate('archive-view')" class="text-brand-muted hover:text-brand-text transition-colors flex items-center gap-2 text-sm font-medium">
+                <button onclick="window.location.hash='#archive'" class="text-brand-muted hover:text-brand-text transition-colors flex items-center gap-2 text-sm font-medium">
                     <i data-lucide="arrow-left" class="w-4 h-4"></i> Archive
                 </button>
                 <span class="font-semibold text-sm tracking-tight text-brand-text" id="nav-archive-title">Item</span>
@@ -537,9 +568,9 @@ function applyRoute() {
         document.getElementById('project-content').innerHTML = studySphereContent;
         document.getElementById('nav-project-title').innerText = 'StudySphere';
         navigate('project-view');
-    } else if (hash === '#project/leonardo') {
-        document.getElementById('project-content').innerHTML = leonardoContent;
-        document.getElementById('nav-project-title').innerText = 'Leonardo Picks';
+    } else if (hash === '#project/new-project') {
+        document.getElementById('project-content').innerHTML = newProjectContent;
+        document.getElementById('nav-project-title').innerText = 'New Project';
         navigate('project-view');
     } else if (hash === '#archive/iwc-event') {
         document.getElementById('archive-detail-content').innerHTML = iwcEventContent;
@@ -564,6 +595,10 @@ function applyRoute() {
         } else if (hash === '#archive/noahs-boutique') {
     document.getElementById('archive-detail-content').innerHTML = noahsBoutiqueContent;
     document.getElementById('nav-archive-title').innerText = "Noah's Boutique";
+    navigate('archive-detail-view');
+    } else if (hash === '#archive/leonardo') {
+    document.getElementById('archive-detail-content').innerHTML = leonardoContent;
+    document.getElementById('nav-archive-title').innerText = "Leonardo Picks";
     navigate('archive-detail-view');
     } else {
         window.location.hash = '#work';
@@ -785,7 +820,7 @@ window.addEventListener('DOMContentLoaded', applyRoute);
                 </div>
 
                 <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-                    <button onclick="navigate('home-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                    <button onclick="window.location.hash='#work'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
                         Return to Work
                     </button>
                 </div>
@@ -914,8 +949,8 @@ window.addEventListener('DOMContentLoaded', applyRoute);
     </div>
 
     <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-        <button onclick="window.location.hash='#work'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
-            Return to Work
+        <button onclick="window.location.hash='#archive'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+            Return to Archive
         </button>
     </div>
 </div>
@@ -970,7 +1005,7 @@ window.addEventListener('DOMContentLoaded', applyRoute);
                 </div>
 
                 <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-                    <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                    <button onclick="window.location.hash='#archive'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
                         Return to Archive
                     </button>
                 </div>
@@ -1037,7 +1072,7 @@ window.addEventListener('DOMContentLoaded', applyRoute);
                 </div>
 
                 <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-                    <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                    <button onclick="window.location.hash='#archive'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
                         Return to Archive
                     </button>
                 </div>
@@ -1081,7 +1116,7 @@ window.addEventListener('DOMContentLoaded', applyRoute);
             </div>
 
             <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-                <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                <button onclick="window.location.hash='#archive'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
                     Return to Archive
                 </button>
             </div>
@@ -1159,7 +1194,7 @@ window.addEventListener('DOMContentLoaded', applyRoute);
         </div>
 
         <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-            <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+            <button onclick="window.location.hash='#archive'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
                 Return to Archive
             </button>
         </div>
@@ -1323,6 +1358,43 @@ const noahsBoutiqueContent = `
     </div>
 `;
 
+const newProjectContent = `
+    <div class="reveal-up">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">
+            New Project
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Category</h4>
+                <p class="text-brand-muted">Coming Soon</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Date</h4>
+                <p class="text-brand-muted">2026</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Status</h4>
+                <p class="text-brand-muted">In Progress</p>
+            </div>
+        </div>
+
+        <div class="project-body">
+            <p>
+                This project is currently being documented.
+            </p>
+        </div>
+
+        <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+            <button onclick="window.location.hash='#work'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                Return to Work
+            </button>
+        </div>
+    </div>
+`;
+
         // Archive Content for Room of Memories (Newly Added)
         const roomOfMemoriesContent = `
             <div class="reveal-up">
@@ -1463,7 +1535,7 @@ const noahsBoutiqueContent = `
                 </div>
 
                 <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-                    <button onclick="navigate('archive-view')" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                    <button onclick="window.location.hash='#archive'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
                         Return to Archive
                     </button>
                 </div>
@@ -1473,8 +1545,8 @@ const noahsBoutiqueContent = `
         function openProject(id) {
     if (id === 'studysphere') {
         window.location.hash = '#project/studysphere';
-    } else if (id === 'leonardo') {
-        window.location.hash = '#project/leonardo';
+    } else if (id === 'new-project') {
+        window.location.hash = '#project/new-project';
     } else {
         document.getElementById('project-content').innerHTML = `
             <div class="reveal-up text-center pt-20">
@@ -1505,6 +1577,8 @@ const noahsBoutiqueContent = `
         window.location.hash = '#archive/star-wars-ships';
     } else if (id === 'noahs-boutique') {
         window.location.hash = '#archive/noahs-boutique';
+    } else if (id === 'leonardo') {
+        window.location.hash = '#archive/leonardo';
     } else {
         document.getElementById('archive-detail-content').innerHTML = `
             <div class="reveal-up text-center pt-10">
