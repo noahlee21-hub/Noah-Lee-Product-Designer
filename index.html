@@ -208,40 +208,56 @@
                         </div>
                     </article>
 
-                    <!-- Project 2: New Project -->
-<article class="group cursor-pointer reveal-up" onclick="openProject('new-project')">
+                    <!-- Project 2: Meta Smart Eyewear Training Materials -->
+<article class="group cursor-pointer reveal-up" onclick="openProject('meta-smart-eyewear')">
     <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
+
+        <!-- Thumbnail -->
         <div class="w-full md:w-1/2 lg:w-[45%]">
-            <div class="img-zoom-container rounded-xl bg-brand-border/30 overflow-hidden aspect-[4/3] flex items-center justify-center border border-dashed border-brand-border">
-                <span class="text-sm font-medium text-brand-muted">
-                    Coming Soon
-                </span>
+            <div class="img-zoom-container rounded-xl bg-brand-border/30 overflow-hidden aspect-[4/3]">
+
+                <!--
+                REPLACE WITH FINAL THUMBNAIL
+                Recommended source from PDF:
+                Final "Ray-Ban / Oakley Meta Experience with Noah" guide,
+                showing both the Seoul and Han River scenarios.
+                -->
+
+                <div class="w-full h-full flex items-center justify-center text-brand-muted text-sm text-center px-6 border border-dashed border-brand-border">
+                    Meta Smart Eyewear Training Materials
+                </div>
+
             </div>
         </div>
 
+        <!-- Text -->
         <div class="w-full md:w-1/2 lg:w-[55%]">
+
             <div class="flex items-center gap-3 mb-4">
                 <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">
-                    Upcoming Project
+                    Training Content Design
                 </span>
+
                 <span class="w-1 h-1 bg-brand-border rounded-full"></span>
+
                 <span class="text-brand-muted text-xs font-semibold uppercase tracking-wider">
-                    TBA
+                    2026
                 </span>
             </div>
 
             <h3 class="text-3xl md:text-4xl font-bold mb-4 text-brand-text group-hover:opacity-70 transition-opacity tracking-tight">
-                New Project
+                Meta Smart Eyewear Training Materials
             </h3>
 
             <p class="text-base md:text-lg text-brand-muted mb-6 leading-relaxed max-w-lg">
-                A new featured project is currently in development.
+                A collection of localized training and communication materials created for the Korean launch of Ray-Ban Meta and Oakley Meta. The project supported internal employees, B2B sales teams, and optical retail partners through clear, scenario-based learning content.
             </p>
 
             <span class="text-sm font-bold border-b border-brand-text pb-0.5 group-hover:text-brand-muted group-hover:border-brand-muted transition-colors inline-flex items-center gap-1">
                 View Project
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </span>
+
         </div>
     </div>
 </article>
@@ -568,9 +584,9 @@ function applyRoute() {
         document.getElementById('project-content').innerHTML = studySphereContent;
         document.getElementById('nav-project-title').innerText = 'StudySphere';
         navigate('project-view');
-    } else if (hash === '#project/new-project') {
-        document.getElementById('project-content').innerHTML = newProjectContent;
-        document.getElementById('nav-project-title').innerText = 'New Project';
+    } else if (hash === '#project/meta-smart-eyewear') {
+        document.getElementById('project-content').innerHTML = metaSmartEyewearContent;
+        document.getElementById('nav-project-title').innerText = 'Meta Smart Eyewear';
         navigate('project-view');
     } else if (hash === '#archive/iwc-event') {
         document.getElementById('archive-detail-content').innerHTML = iwcEventContent;
@@ -1358,41 +1374,646 @@ const noahsBoutiqueContent = `
     </div>
 `;
 
-const newProjectContent = `
-    <div class="reveal-up">
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">
-            New Project
-        </h1>
+// Project Content for Meta Smart Eyewear Training Materials
+const metaSmartEyewearContent = `
+<div class="reveal-up">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
-            <div>
-                <h4 class="font-semibold text-brand-text mb-1">Category</h4>
-                <p class="text-brand-muted">Coming Soon</p>
-            </div>
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">
+        Meta Smart Eyewear Training Materials
+    </h1>
 
-            <div>
-                <h4 class="font-semibold text-brand-text mb-1">Date</h4>
-                <p class="text-brand-muted">2026</p>
-            </div>
+    <!-- Project Metadata -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
 
-            <div>
-                <h4 class="font-semibold text-brand-text mb-1">Status</h4>
-                <p class="text-brand-muted">In Progress</p>
-            </div>
+        <div>
+            <h4 class="font-semibold text-brand-text mb-1">Role</h4>
+            <p class="text-brand-muted">Training (Leonardo) Intern</p>
         </div>
 
-        <div class="project-body">
-            <p>
-                This project is currently being documented.
+        <div>
+            <h4 class="font-semibold text-brand-text mb-1">Timeline</h4>
+            <p class="text-brand-muted">Apr 2026 - July 2026</p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-brand-text mb-1">Organization</h4>
+            <p class="text-brand-muted">EssilorLuxottica</p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-brand-text mb-1">Tools</h4>
+            <p class="text-brand-muted">
+                Figma, Microsoft PowerPoint,<br>
+                ChatGPT Image Generation
             </p>
         </div>
 
-        <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
-            <button onclick="window.location.hash='#work'" class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
-                Return to Work
-            </button>
-        </div>
     </div>
+
+    <div class="project-body">
+
+        <!-- ================= OVERVIEW ================= -->
+
+        <h2>Overview</h2>
+
+        <p>
+            During my internship with EssilorLuxottica Korea's Training team, I supported the launch of Ray-Ban Meta and Oakley Meta by designing localized training and communication materials for several audiences. These included internal employees, the B2B sales team, and independent optical retailers preparing to sell and support the products in Korea.
+        </p>
+
+        <p>
+            The work ranged from monthly Leonardo live-session announcements and required-learning notices to presentation visuals, product-experience prompts, and short hands-on sessions for new employees. Because most of the audience worked outside design or technology, I focused on making each piece easy to scan, easy to explain, and practical to use in a real training setting.
+        </p>
+
+
+        <!-- ================= HERO VISUAL ================= -->
+        <!--
+        HERO VISUAL PLACEMENT FROM PDF
+
+        Create one composite hero image using the Ray-Ban and Oakley Meta experience-guide visuals.
+
+        Recommended source:
+        Final "Ray-Ban / Oakley Meta Experience with Noah" guide,
+        showing both the Seoul and Han River scenarios.
+
+        Placement:
+        Directly after Overview.
+
+        Suggested caption:
+        Localized experience guide created for Ray-Ban Meta and Oakley Meta product training.
+        -->
+
+        <div class="placeholder-img my-12">
+            [Insert Hero Image: Final Ray-Ban / Oakley Meta Experience with Noah Guide — Seoul + Han River Scenarios]
+        </div>
+
+        <p class="text-sm text-center text-brand-muted italic">
+            "Localized experience guide created for Ray-Ban Meta and Oakley Meta product training."
+        </p>
+
+
+        <!-- ================= CONFIDENTIALITY ================= -->
+
+        <h2>Confidentiality and Portfolio Use</h2>
+
+        <p>
+            This case study includes only a selected portion of the work I created during the internship. Internal or confidential company materials have been excluded, and every item shown here was included only after receiving approval from my supervisor. Some training decks were edited or localized from global and internal source files, so only the parts that reflect my own design contribution are presented.
+        </p>
+
+
+        <!-- ================= LAUNCH CONTEXT ================= -->
+
+        <h2>Launch Context and Training Support</h2>
+
+        <p>
+            I joined the Training team shortly before the Korean launch of Ray-Ban Meta and Oakley Meta. Early in the internship, I assisted my supervisor during product-training sessions for optical retailers at order events, where vendors were introduced to the product lineup, core functions, sales considerations, and after-sales procedures.
+        </p>
+
+        <p>
+            The launch included Ray-Ban Meta styles such as Wayfarer, Skyler, and Headliner, as well as Oakley Meta models including HSTN and Vanguard. Supporting these sessions helped me understand the questions retailers were likely to ask and gave me practical context before I began designing learning materials.
+        </p>
+
+
+        <!--
+        LAUNCH CONTEXT IMAGES
+
+        Optional:
+        - Approved vendor-training or order-event setup photo
+          with sensitive information cropped or blurred.
+        - Product-only photo showing approved demo units or launch models.
+        - Early notes or simple sketch mapping:
+          internal employees / sales teams / optical retailers.
+
+        PDF recommendation:
+        Use no more than two visuals.
+        -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Optional Image: Approved Vendor Training / Order-Event Setup]
+            </div>
+
+            <div class="placeholder-img">
+                [Optional Image: Product Demo Units / Launch Models / Audience Map]
+            </div>
+
+        </div>
+
+
+        <!-- ================= 1. MONTHLY B2B EDM ================= -->
+
+        <h2>1. Monthly B2B Live-Session EDMs</h2>
+
+        <p>
+            I managed recurring communication for Leonardo live sessions distributed through the KakaoTalk Business channel to optical retail partners. At the beginning of each month, I designed schedule graphics that summarized the available sessions, dates, times, and course topics in a format that could be understood quickly on mobile.
+        </p>
+
+        <p>
+            For July, the Meta-related schedule included a three-part Ray-Ban and Oakley Meta Master series - product knowledge, customer consultation, and sales strategy - along with required brand-story sessions for Ray-Ban and Oakley. The visual system used large dates, clear cards, and restrained branding so retailers could identify the relevant session without reading a long message.
+        </p>
+
+        <h3>English Translation of Key Titles</h3>
+
+        <ul>
+            <li>
+                룩소티카코리아 7월 라이브 세션 일정:
+                <strong>Luxottica Korea July Live Session Schedule</strong>
+            </li>
+
+            <li>
+                레이밴 | 오클리 메타 마스터:
+                <strong>Ray-Ban | Oakley Meta Master</strong>
+            </li>
+
+            <li>
+                제품 이해:
+                <strong>Product Knowledge</strong>
+            </li>
+
+            <li>
+                상담 실전:
+                <strong>Customer Consultation Practice</strong>
+            </li>
+
+            <li>
+                판매 전략:
+                <strong>Sales Strategy</strong>
+            </li>
+
+            <li>
+                #CRP 도어 필수 이수 교육:
+                <strong>#CRP Door Required Training</strong>
+            </li>
+        </ul>
+
+
+        <!--
+        LIVE-SESSION EDM IMAGES
+
+        1. July Live Session Schedule -
+           Ray-Ban | Oakley Meta Master
+
+        2. July Live Session Schedule -
+           #CRP Door Required Training
+
+        3. Optional KakaoTalk Business distribution screenshot
+
+        Placement:
+        First two side-by-side.
+        Distribution screenshot beneath.
+        -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Insert Image: July Live Session Schedule — Ray-Ban | Oakley Meta Master]
+            </div>
+
+            <div class="placeholder-img">
+                [Insert Image: July Live Session Schedule — #CRP Door Required Training]
+            </div>
+
+        </div>
+
+        <div class="placeholder-img my-8">
+            [Optional Image: KakaoTalk Business Message / Approved Distribution Post]
+        </div>
+
+        <p class="text-sm text-center text-brand-muted italic">
+            "Monthly Leonardo live-session EDMs distributed to optical retail partners."
+        </p>
+
+
+        <!-- ================= 2. INTERNAL LEONARDO ================= -->
+
+        <h2>2. Internal Leonardo Smart-Eyewear Recommendations</h2>
+
+        <p>
+            As part of the monthly Leonardo learning campaign, I curated smart-eyewear content for Luxottica Korea employees and designed a themed June recommendation set. The selected courses introduced the broader smart-eyewear category, new optical styles, customer experience, and AI-assisted content creation.
+        </p>
+
+        <p>
+            The two main poster concepts were <strong>A New Prescription Era</strong> and <strong>Unlock the World of Smart Eyewear</strong>. I used supplied brand imagery, including an approved image of Ray-Ban global ambassador Jennie, and built a dark editorial layout that felt aligned with the product category while remaining readable as an internal learning communication.
+        </p>
+
+        <p>
+            The recommended content included topics such as Ray-Ban Meta: New Optical Styles, Smart Glasses Customer Experience, Smart Eyewear Design and Lens Enhancements, Inside the Innovative World of Smart Eyewear, and AI-Generated Content Creation.
+        </p>
+
+
+        <!--
+        INTERNAL RECOMMENDATION POSTER IMAGES
+
+        - A NEW PRESCRIPTION ERA — English version
+        - UNLOCK THE WORLD OF SMART EYEWEAR — English version
+        - Optional Figma working-file screenshot
+        - Optional approved internal email screenshot
+
+        Placement:
+        Posters first.
+        Then Figma process screenshot.
+        Then distribution email.
+        -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Insert Image: A NEW PRESCRIPTION ERA — English Version]
+            </div>
+
+            <div class="placeholder-img">
+                [Insert Image: UNLOCK THE WORLD OF SMART EYEWEAR — English Version]
+            </div>
+
+        </div>
+
+        <div class="placeholder-img my-8">
+            [Optional Image: Figma Working File — Grids / Text Styles / Layout Iterations]
+        </div>
+
+        <div class="placeholder-img my-8">
+            [Optional Image: Approved Internal Email Showing Final Recommendation Material]
+        </div>
+
+        <p class="text-sm text-center text-brand-muted italic">
+            "Monthly Leonardo smart-eyewear learning recommendations for internal employees."
+        </p>
+
+
+        <!-- ================= 3. REQUIRED LEARNING ================= -->
+
+        <h2>3. Required Learning by Ordered Product</h2>
+
+        <p>
+            I also designed a required-learning notice for the B2B sales team to share with optical retailers. The purpose was to make it clear which Leonardo programs each retailer needed to complete based on the wearable models they had ordered.
+        </p>
+
+        <p>The three course paths were:</p>
+
+        <ul>
+            <li>
+                Ray-Ban | Meta Glasses - 레이밴 | 메타 안경
+            </li>
+
+            <li>
+                Oakley | Meta AI Glasses - 오클리 | 메타 AI 글라스
+            </li>
+
+            <li>
+                Ray-Ban Meta: New Optical Styles - 레이밴 메타: 새로운 광학 스타일
+            </li>
+        </ul>
+
+        <p>
+            Rather than creating another unrelated visual style, I reused the structure and palette developed for <strong>A New Prescription Era</strong>. This followed my supervisor's direction to build a more consistent communication system instead of redesigning every notice from scratch.
+        </p>
+
+
+        <!--
+        REQUIRED-LEARNING NOTICE IMAGES
+
+        - Final "Wearable Order Door Required Training Completion Guide" poster
+        - Optional approved email screenshot sent to B2B sales team
+        - Optional simple workflow:
+          Training team → B2B sales team → optical retailers
+        -->
+
+        <div class="placeholder-img my-12">
+            [Insert Image: Wearable Order Door Required Training Completion Guide]
+        </div>
+
+        <div class="placeholder-img my-8">
+            [Optional Image: Approved B2B Sales Team Email]
+        </div>
+
+        <div class="placeholder-img my-8">
+            [Optional Diagram: Training Team → B2B Sales Team → Optical Retailers]
+        </div>
+
+        <p class="text-sm text-center text-brand-muted italic">
+            "Required Leonardo learning paths organized by the wearable products ordered by each retail partner."
+        </p>
+
+
+        <!-- ================= 4. TRAINING DECK ================= -->
+
+        <h2>4. Training-Deck Visual Support</h2>
+
+        <p>
+            For online and in-person sessions led by my supervisor, I created supporting visuals that could make product functions easier to understand. One approved example presented a voice-command calling scenario, showing how a wearer could initiate communication through the glasses without handling a phone.
+        </p>
+
+        <p>
+            Only one example is included here because the remaining visuals were part of internal training decks that could not be used in my portfolio. The selected image demonstrates the visual direction without revealing confidential presentation content.
+        </p>
+
+
+        <!--
+        TRAINING-DECK SUPPORT IMAGE
+
+        Primary:
+        meta call.png — approved AI-generated calling scenario
+
+        Optional:
+        Cropped PowerPoint screenshot showing use within a slide,
+        with confidential information removed.
+        -->
+
+        <div class="placeholder-img my-12">
+            [Insert Image: meta call.png — Approved AI-Generated Calling Scenario]
+        </div>
+
+        <div class="placeholder-img my-8">
+            [Optional Image: Cropped PowerPoint Training Slide]
+        </div>
+
+        <p class="text-sm text-center text-brand-muted italic">
+            "AI-generated scenario visual created to support Meta smart-eyewear training."
+        </p>
+
+
+        <!-- ================= 5. NEW-HIRE EXPERIENCE ================= -->
+
+        <h2>5. New-Hire Product Experience Sessions</h2>
+
+        <p>
+            I independently led several short product-experience sessions for new employees. These were not full product-certification classes; instead, they introduced four representative capabilities through a brief demonstration using my own Meta glasses and company demo units: immersive audio, hands-free capture, easy sharing and communication, and Meta AI.
+        </p>
+
+        <p>
+            To support the sessions, I developed short voice-command scenarios and a printed experience guide. The Ray-Ban scenario was set around Gyeongbokgung and Gwanghwamun, reflecting the brand's relationship with style, everyday life, and urban exploration. The Oakley scenario was set at the Han River and focused on running, weather, first-person capture, and fitness data, reflecting the brand's performance and active-lifestyle positioning.
+        </p>
+
+        <p>
+            During visual exploration for the Oakley section, a social-media story format became the strongest direction. I refined the idea into a more intentional SNS-style sequence because it communicated movement, personal data, and shareable moments more naturally than a conventional training illustration. The final guide remained visually simple so it could be printed, handed out during sessions, and forwarded digitally to retail partners.
+        </p>
+
+
+        <h3>English Translation of the Experience-Guide Title and Prompts</h3>
+
+        <ul>
+
+            <li>
+                레이밴 / 오클리 메타 체험 with Noah:
+                <strong>Ray-Ban / Oakley Meta Experience with Noah</strong>
+            </li>
+
+            <li>
+                [체험 가이드] 레이밴 메타 &amp; 오클리 메타 핵심 기능:
+                <strong>[Experience Guide] Core Features of Ray-Ban Meta &amp; Oakley Meta</strong>
+            </li>
+
+            <li>
+                헤이 메타, 내가 지금 보고 있는 게 뭐야?:
+                <strong>Hey Meta, what am I looking at?</strong>
+            </li>
+
+            <li>
+                헤이 메타, 사진 / 동영상 찍어줘.:
+                <strong>Hey Meta, take a photo / video.</strong>
+            </li>
+
+            <li>
+                헤이 메타, 경복궁 근처 맛집 추천해줘.:
+                <strong>Hey Meta, recommend a good restaurant near Gyeongbokgung.</strong>
+            </li>
+
+            <li>
+                헤이 메타, 오늘 러닝하기 좋은 날씨야?:
+                <strong>Hey Meta, is the weather good for running today?</strong>
+            </li>
+
+            <li>
+                헤이 메타, 현재 속도는?:
+                <strong>Hey Meta, what is my current pace?</strong>
+            </li>
+
+        </ul>
+
+
+        <!--
+        PRODUCT EXPERIENCE GUIDE IMAGES
+
+        - Final one-page Ray-Ban / Oakley Meta Experience Guide
+        - Ray-Ban Seoul:
+          seoul1.png
+          seoul2.png
+        - Oakley SNS:
+          tina1.png
+          tina2.png
+          tina3.png
+        - Optional printed guide photo
+        - Optional live demonstration photo with permission
+
+        Placement:
+        Guide first.
+        Ray-Ban pair second.
+        Oakley 3-image sequence third.
+        Printed handout / session photo last.
+        -->
+
+
+        <div class="placeholder-img my-12">
+            [Insert Image: Final One-Page Ray-Ban / Oakley Meta Experience Guide]
+        </div>
+
+
+        <h3>Ray-Ban Seoul Scenario</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Insert Image: seoul1.png]
+            </div>
+
+            <div class="placeholder-img">
+                [Insert Image: seoul2.png]
+            </div>
+
+        </div>
+
+
+        <h3>Oakley SNS Scenario</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Insert Image: tina1.png]
+            </div>
+
+            <div class="placeholder-img">
+                [Insert Image: tina2.png]
+            </div>
+
+            <div class="placeholder-img">
+                [Insert Image: tina3.png]
+            </div>
+
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Optional Image: Printed Experience Guide Used During Session]
+            </div>
+
+            <div class="placeholder-img">
+                [Optional Image: Approved Live Product Demonstration Photo]
+            </div>
+
+        </div>
+
+        <p class="text-sm text-center text-brand-muted italic">
+            "Localized voice-command scenarios designed for short hands-on Meta product sessions."
+        </p>
+
+
+        <!-- ================= LOCALIZATION ================= -->
+
+        <h2>Localization and Audience Design</h2>
+
+        <p>
+            Most of the deliverables were created for Korean employees, sales representatives, and optical retailers, so localization involved more than direct translation. I adjusted phrasing, examples, visual context, and reading hierarchy for a Korean audience while preserving the product language and global brand identity.
+        </p>
+
+        <p>
+            The materials also had to work across different channels: mobile-first KakaoTalk messages, internal email, printed handouts, PowerPoint presentations, and live sessions. I therefore treated each piece as part of one training system rather than as an isolated poster.
+        </p>
+
+
+        <!-- ================= PROCESS ================= -->
+
+        <h2>Process and Design System</h2>
+
+        <p>
+            My process usually began by reviewing the learning objective, audience, distribution channel, and any global source material provided by the company. I then organized the content into a simple hierarchy, tested layout options in Figma or PowerPoint, and reviewed the draft with my supervisor before final distribution.
+        </p>
+
+        <p>
+            Because the work was used by non-design audiences, I prioritized legibility, repeatable layouts, and clear calls to action. Reusing established visual structures also helped the team communicate more consistently and reduced the time needed to prepare recurring materials.
+        </p>
+
+
+        <!--
+        PROCESS DOCUMENTATION
+
+        - Optional early sketch or wireframe
+        - Figma screenshot showing components / spacing / repeated cards
+        - PowerPoint screenshot showing approved visual in training deck
+        - Optional before-and-after comparison
+
+        PDF recommendation:
+        Keep concise and explain decisions rather than software UI.
+        -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Optional Image: Early Sketch / Wireframe]
+            </div>
+
+            <div class="placeholder-img">
+                [Insert Image: Figma Components / Spacing / Repeated Card Structures]
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Insert Image: PowerPoint Training-Deck Application]
+            </div>
+
+            <div class="placeholder-img">
+                [Optional Image: Before-and-After Information Hierarchy Comparison]
+            </div>
+
+        </div>
+
+
+        <!-- ================= RESULTS ================= -->
+
+        <h2>Results and Learning Outcomes</h2>
+
+        <p>
+            The project supported several stages of the Meta smart-eyewear launch: retailer education, internal learning, sales-team communication, and new-hire product experience. My work was distributed through internal email, KakaoTalk Business communications, printed handouts, and live training sessions.
+        </p>
+
+        <p>
+            I also completed the relevant Leonardo programs myself, including Ray-Ban | Meta Glasses and Oakley | Meta AI Glasses. Completing the courses helped me design materials from the perspective of an actual learner rather than only as a visual designer.
+        </p>
+
+
+        <!--
+        RESULTS AND CREDENTIALS IMAGES
+
+        - Ray-Ban | Meta Glasses completion certificate
+        - Oakley | Meta AI Glasses completion certificate
+        - Optional approved distribution collage
+        - Ray-Ban Meta pop-up opening at MUSINSA Seongsu
+          with the other interns
+        - Optional approved vendor / new-hire training session photo
+
+        Placement:
+        Certificates side by side.
+        MUSINSA Seongsu photo next.
+        One concise distribution or training collage last.
+        -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+            <div class="placeholder-img">
+                [Insert Image: Ray-Ban | Meta Glasses Completion Certificate]
+            </div>
+
+            <div class="placeholder-img">
+                [Insert Image: Oakley | Meta AI Glasses Completion Certificate]
+            </div>
+
+        </div>
+
+        <div class="placeholder-img my-12">
+            [Insert Photo: Ray-Ban Meta Pop-Up Opening at MUSINSA Seongsu with Other Interns]
+        </div>
+
+        <div class="placeholder-img my-8">
+            [Optional Image: Approved Distribution / Vendor Training / New-Hire Training Collage]
+        </div>
+
+        <p class="text-sm text-center text-brand-muted italic">
+            "Leonardo course completion and launch-support activities completed during the internship."
+        </p>
+
+
+        <!-- ================= REFLECTION ================= -->
+
+        <h2>Reflection</h2>
+
+        <p>
+            This project taught me how visual design operates inside a real training function. The strongest solution was not always the most expressive one; it was the one that helped a sales representative, employee, or retailer understand what to do next with the least friction.
+        </p>
+
+        <p>
+            Working across product education, communication design, localization, and live demonstration also showed me how a training experience is built from many connected touchpoints. The project strengthened my interest in designing learning materials that are visually clear, context-aware, and practical enough to support real behavior.
+        </p>
+
+    </div>
+
+
+    <!-- ================= RETURN ================= -->
+
+    <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+
+        <button
+            onclick="window.location.hash='#work'"
+            class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+            Return to Work
+        </button>
+
+    </div>
+
+</div>
 `;
 
         // Archive Content for Room of Memories (Newly Added)
@@ -1545,8 +2166,8 @@ const newProjectContent = `
         function openProject(id) {
     if (id === 'studysphere') {
         window.location.hash = '#project/studysphere';
-    } else if (id === 'new-project') {
-        window.location.hash = '#project/new-project';
+    } else if (id === 'meta-smart-eyewear') {
+        window.location.hash = '#project/meta-smart-eyewear';
     } else {
         document.getElementById('project-content').innerHTML = `
             <div class="reveal-up text-center pt-20">
