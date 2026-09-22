@@ -351,6 +351,36 @@
                         <p class="text-xs text-brand-muted mt-1">Interactive Minigame / 2024</p>
                     </div>
 
+                    <!-- 8. Design Fundamentals Classwork -->
+                    <div class="group cursor-pointer" onclick="openArchiveDetail('design-fundamentals')">
+                        <div class="aspect-[4/3] bg-brand-border/10 border border-dashed border-brand-border/50 mb-4 flex items-center justify-center text-brand-muted text-xs text-center px-4">
+                            Design Fundamentals Classwork
+                        </div>
+
+                        <h3 class="text-sm font-semibold text-brand-text">
+                            Design Fundamentals Classwork
+                        </h3>
+
+                        <p class="text-xs text-brand-muted mt-1">
+                            Visual Design / Coursework / 2022
+                        </p>
+                    </div>
+
+                    <!-- 9. Seoul Photography, 2019-2021 -->
+                    <div class="group cursor-pointer" onclick="openArchiveDetail('seoul-photography')">
+                        <div class="aspect-[4/3] bg-brand-border/10 border border-dashed border-brand-border/50 mb-4 flex items-center justify-center text-brand-muted text-xs text-center px-4">
+                            Seoul Photography, 2019-2021
+                        </div>
+
+                        <h3 class="text-sm font-semibold text-brand-text">
+                            Seoul Photography, 2019-2021
+                        </h3>
+
+                        <p class="text-xs text-brand-muted mt-1">
+                            Photography / 2019-2021
+                        </p>
+                    </div>
+
 
 
                 </div>
@@ -602,14 +632,22 @@ function applyRoute() {
         document.getElementById('archive-detail-content').innerHTML = starWarsShipsContent;
         document.getElementById('nav-archive-title').innerText = 'Star Wars Low-Poly Ships';
         navigate('archive-detail-view');
-        } else if (hash === '#archive/noahs-boutique') {
-    document.getElementById('archive-detail-content').innerHTML = noahsBoutiqueContent;
-    document.getElementById('nav-archive-title').innerText = "Noah's Boutique";
-    navigate('archive-detail-view');
+    } else if (hash === '#archive/noahs-boutique') {
+        document.getElementById('archive-detail-content').innerHTML = noahsBoutiqueContent;
+        document.getElementById('nav-archive-title').innerText = "Noah's Boutique";
+        navigate('archive-detail-view');
+    } else if (hash === '#archive/design-fundamentals') {
+        document.getElementById('archive-detail-content').innerHTML = designFundamentalsContent;
+        document.getElementById('nav-archive-title').innerText = 'Design Fundamentals';
+        navigate('archive-detail-view');
+    } else if (hash === '#archive/seoul-photography') {
+        document.getElementById('archive-detail-content').innerHTML = seoulPhotographyContent;
+        document.getElementById('nav-archive-title').innerText = 'Seoul Photography';
+        navigate('archive-detail-view');    
     } else if (hash === '#archive/leonardo') {
-    document.getElementById('archive-detail-content').innerHTML = leonardoContent;
-    document.getElementById('nav-archive-title').innerText = "Leonardo Picks";
-    navigate('archive-detail-view');
+        document.getElementById('archive-detail-content').innerHTML = leonardoContent;
+        document.getElementById('nav-archive-title').innerText = "Leonardo Picks";
+        navigate('archive-detail-view');
     } else {
         window.location.hash = '#work';
     }
@@ -1386,6 +1424,406 @@ const noahsBoutiqueContent = `
         </div>
     </div>
 `;
+// Archive Content for Design Fundamentals Classwork
+const designFundamentalsContent = `
+    <div class="reveal-up">
+
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">
+            Design Fundamentals Classwork
+        </h1>
+
+        <!-- Project Metadata -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Course</h4>
+                <p class="text-brand-muted">Design Fundamentals</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Program</h4>
+                <p class="text-brand-muted">NYU Interactive Media Arts</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Semester</h4>
+                <p class="text-brand-muted">Fall 2022</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Instructor</h4>
+                <p class="text-brand-muted">Katherine Dillon</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Type</h4>
+                <p class="text-brand-muted">Academic Coursework / Visual Design Studies</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Focus</h4>
+                <p class="text-brand-muted">Typography, expressive type, monogram systems, pattern, and poster design</p>
+            </div>
+
+        </div>
+
+
+        <div class="project-body">
+
+            <!-- ================= OVERVIEW ================= -->
+
+            <h2>Overview</h2>
+
+            <p>
+                This archive brings together a series of visual studies from Design Fundamentals, one of the core IMA courses I took during my sophomore year. The assignments moved from basic typography and form into more open-ended exercises in visual meaning, identity, pattern, and poster composition.
+            </p>
+
+            <p>
+                Rather than treating the pieces as one continuous project, I see them as a snapshot of how I was learning to build visual systems: first by looking closely at type, then by using letterforms as images, and eventually by applying those ideas to a personal monogram, a repeat pattern, and a final event-poster concept.
+            </p>
+
+
+            <!-- ================= HERO IMAGE ================= -->
+
+            <div class="placeholder-img my-12">
+                [Insert Image: Frame 83(1).png — ITP IMA Low Res Winter Show 2022 Poster]
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Final poster study created for the 2022 ITP IMA Low Res Winter Show context."
+            </p>
+
+
+            <!-- ================= 1. TYPEFACE STUDIES ================= -->
+
+            <h2>1. Typeface Studies</h2>
+
+            <p>
+                One of the early exercises focused on observing typefaces as designed objects rather than using type only as text. I selected different fonts and created simple specimen-style compositions that paired my name with the typeface name and weight.
+            </p>
+
+            <p>
+                The three studies show very different typographic personalities: Cinzel Regular uses high-contrast serif forms with a more classical feel; Roboto Slab Bold feels heavier and more direct; and Oswald ExtraLight uses a narrow, lightweight structure that creates a cleaner and more contemporary impression. The exercise helped me notice how weight, proportion, serif structure, and spacing can change the tone of the same name.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 14.png — Cinzel, Regular]
+                </div>
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 15.png — Roboto Slab, Bold]
+                </div>
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 16.png — Oswald, ExtraLight]
+                </div>
+
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Typeface studies comparing how different letterforms and weights change the visual tone of the same name."
+            </p>
+
+
+            <!-- ================= 2. EXPRESSIVE TYPOGRAPHY ================= -->
+
+            <h2>2. Expressive Typography</h2>
+
+            <p>
+                The next set of exercises treated words as visual forms. Instead of relying on illustration, I changed the scale, angle, spacing, and structure of the letters so that the typography itself suggested the action or feeling of the word.
+            </p>
+
+            <p>
+                For Drown, the baseline and letterforms tilt downward, creating a sense of sinking. In Fall, the extended vertical strokes turn the word into a downward motion. Jump separates and offsets the letters so the word feels as if it is moving upward and across space. These small studies were an early introduction to using composition to communicate meaning without adding extra imagery.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 26.png — Drown]
+                </div>
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 27.png — Fall]
+                </div>
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 31.png — Jump]
+                </div>
+
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Expressive typography studies using the physical behavior of letterforms to reinforce meaning."
+            </p>
+
+
+            <!-- ================= 3. MONOGRAM AND PATTERN ================= -->
+
+            <h2>3. Monogram and Pattern System</h2>
+
+            <p>
+                For a later assignment, I developed a monogram from the initials N and L. I wanted the mark to stay recognizable as two letters while also working as a compact geometric symbol, so I used the diagonal structure of the N and the horizontal base of the L to create a single connected form.
+            </p>
+
+            <p>
+                I then repeated, rotated, and interlocked the monogram to build a larger pattern. Working in black and white first made it easier to judge the rhythm and negative space before introducing color. The final palette of pink, purple, yellow, and white shifted the pattern from a simple identity exercise into something closer to a small personal graphic system.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 36.png — NL Monogram]
+                </div>
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 41.png — Black-and-White Repeat Pattern]
+                </div>
+
+                <div class="placeholder-img">
+                    [Insert Image: Frame 65.png — Color Pattern and Palette]
+                </div>
+
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Developing a personal NL monogram into a repeatable graphic pattern."
+            </p>
+
+
+            <!-- ================= 4. APPLIED BRANDING ================= -->
+
+            <h2>4. Applied Branding Mockup</h2>
+
+            <p>
+                To test how the pattern could behave outside a flat composition, I applied it to a tote-bag mockup. The goal was less about creating a full brand and more about seeing whether the monogram system could hold together when translated onto a physical object.
+            </p>
+
+            <p>
+                The tote gave me a simple way to test scale, repetition, and contrast in a more practical context. It also made the pattern feel less like an isolated classroom graphic and more like something that could be used as a recognizable visual motif.
+            </p>
+
+            <div class="placeholder-img my-12">
+                [Insert Image: White_Tote_Bag_Mockup(1).png]
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Pattern application study using a tote-bag mockup."
+            </p>
+
+
+            <!-- ================= 5. FINAL POSTER ================= -->
+
+            <h2>5. Final Poster Study - ITP IMA Low Res Winter Show 2022</h2>
+
+            <p>
+                For the final assignment, I created my own poster concept for the upcoming ITP IMA Low Res Winter Show 2022. The brief was an opportunity to bring together the semester's typography and composition exercises in a single event graphic.
+            </p>
+
+            <p>
+                I used oversized typography as the main visual element, allowing the words ITP, IMA, Low Res, Winter Show, 2022 to become part of the composition rather than simply sitting on top of it. The large circular form and warm yellow-orange palette create a clear focal area for the event information while the oversized letterforms give the poster a more energetic exhibition identity.
+            </p>
+
+            <p>
+                The poster remained a class-based design study rather than an official event identity. I am presenting it here as my own response to the Winter Show brief and as the final piece from the course.
+            </p>
+
+            <div class="placeholder-img my-12">
+                [Insert Image: Frame 83(1).png — ITP IMA Low Res Winter Show 2022 Poster]
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Poster concept developed as the final Design Fundamentals assignment for the 2022 ITP IMA Low Res Winter Show brief."
+            </p>
+
+
+            <!-- ================= REFLECTION ================= -->
+
+            <h2>Reflection</h2>
+
+            <p>
+                Looking back, these exercises feel simple compared with my later product and visual-design work, but they were useful because they forced me to pay attention to fundamentals that are easy to overlook: type weight, alignment, negative space, repetition, hierarchy, and the relationship between visual form and meaning.
+            </p>
+
+            <p>
+                The monogram and poster assignments were especially useful in showing me how a small formal decision can grow into a broader system. That way of thinking - starting with a basic visual rule and then applying it consistently - is something I continued to use in later interface, communication, and brand-related work.
+            </p>
+
+        </div>
+
+
+        <!-- ================= RETURN ================= -->
+
+        <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+            <button
+                onclick="window.location.hash='#archive'"
+                class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                Return to Archive
+            </button>
+        </div>
+
+    </div>
+`;
+
+// Archive Content for Seoul Photography, 2019-2021
+const seoulPhotographyContent = `
+    <div class="reveal-up">
+
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">
+            Seoul Photography, 2019-2021
+        </h1>
+
+        <!-- Project Metadata -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 mt-8 pt-6 border-t border-brand-border/50 text-sm">
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Type</h4>
+                <p class="text-brand-muted">Personal Photography Project</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Location</h4>
+                <p class="text-brand-muted">Seoul, South Korea</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Date</h4>
+                <p class="text-brand-muted">2019-2021</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-brand-text mb-1">Medium</h4>
+                <p class="text-brand-muted">Digital Photography</p>
+            </div>
+
+        </div>
+
+
+        <div class="project-body">
+
+            <!-- ================= OVERVIEW ================= -->
+
+            <h2>Overview</h2>
+
+            <p>
+                This personal series brings together four photographs I took around Seoul between 2019 and 2021. I was drawn to ordinary scenes that became visually interesting because of light, weather, distance, or a brief moment that could easily disappear.
+            </p>
+
+            <p>
+                The images are not meant to document one specific story. Instead, they reflect the way I tend to notice the city: sometimes through large architectural silhouettes, sometimes through people reduced to small figures in the frame, and sometimes through something as simple as a cat sitting quietly in a neighborhood.
+            </p>
+
+
+            <!-- ================= HERO IMAGE ================= -->
+
+            <div class="placeholder-img my-12">
+                [Insert Image: 20210319174237_IMG_3635.jpg — Palace Roofline at Sunset]
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Seoul, 2021."
+            </p>
+
+
+            <!-- ================= 1. PALACE AT SUNSET ================= -->
+
+            <h2>1. Palace at Sunset</h2>
+
+            <p>
+                I photographed this scene near a palace at sunset, when the buildings had already fallen almost completely into shadow. I liked the contrast between the heavy rooflines and the soft orange sky, especially how the architecture becomes recognizable mostly through silhouette.
+            </p>
+
+            <div class="placeholder-img my-12">
+                [Insert Image: 20210319174237_IMG_3635.jpg]
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Palace roofline at sunset, Seoul, 2021."
+            </p>
+
+
+            <!-- ================= 2. FIGURES IN THE HAZE ================= -->
+
+            <h2>2. Figures in the Haze</h2>
+
+            <p>
+                This image was taken on a hazy day when the skyline almost disappeared into the background. The people in the foreground felt much more present because the city behind them had been reduced to faint shapes. I kept the composition simple so the empty space and silhouettes could carry most of the image.
+            </p>
+
+            <div class="placeholder-img my-12">
+                [Insert Image: 20210507160459_IMG_4100.JPEG]
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Figures against a hazy Seoul skyline, 2021."
+            </p>
+
+
+            <!-- ================= 3. NEIGHBORHOOD CAT ================= -->
+
+            <h2>3. Neighborhood Cat</h2>
+
+            <p>
+                Not every photograph in the series is architectural or atmospheric. I included this one because it captures a much smaller everyday moment: a cat sitting on a low wall in a residential area. The symmetrical pose and direct gaze made the scene feel unexpectedly composed even though it was completely unplanned.
+            </p>
+
+            <div class="my-12 flex justify-center">
+                <div class="placeholder-img max-w-[600px]">
+                    [Insert Image: 20210517185605_IMG_4180.JPEG]
+                </div>
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "A neighborhood cat in Seoul, 2021."
+            </p>
+
+
+            <!-- ================= 4. STORMY SKYLINE ================= -->
+
+            <h2>4. Stormy Skyline</h2>
+
+            <p>
+                This photograph focuses on the mood of the sky rather than a specific landmark. The dark foreground, distant buildings, and heavy clouds create a more cinematic atmosphere than the other images in the set. I kept the exposure relatively dark because I wanted the scene to feel quiet and slightly dramatic rather than bright or descriptive.
+            </p>
+
+            <div class="placeholder-img my-12">
+                [Insert Image: SAM_2935.JPEG]
+            </div>
+
+            <p class="text-sm text-center text-brand-muted italic">
+                "Storm clouds over Seoul, 2019-2021."
+            </p>
+
+
+            <!-- ================= REFLECTION ================= -->
+
+            <h2>Reflection</h2>
+
+            <p>
+                Looking back at these photographs, I like that they do not all share the same subject but still feel connected by mood. I was often more interested in light, distance, and atmosphere than in photographing a landmark directly.
+            </p>
+
+            <p>
+                That way of looking at everyday environments later carried into my other visual work as well: noticing how framing, contrast, scale, and small contextual details can completely change the feeling of an otherwise ordinary scene.
+            </p>
+
+        </div>
+
+
+        <!-- ================= RETURN ================= -->
+
+        <div class="mt-20 pt-10 border-t border-brand-border/50 text-center">
+            <button
+                onclick="window.location.hash='#archive'"
+                class="text-sm font-semibold uppercase tracking-widest text-brand-text hover:text-brand-muted transition-colors">
+                Return to Archive
+            </button>
+        </div>
+
+    </div>
+`;
 
 // Project Content for Meta Smart Eyewear Training Materials
 const metaSmartEyewearContent = `
@@ -1878,30 +2316,6 @@ const metaSmartEyewearContent = `
             Because the work was used by non-design audiences, I prioritized legibility, repeatable layouts, and clear calls to action. Reusing established visual structures also helped the team communicate more consistently and reduced the time needed to prepare recurring materials.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
-
-            <div class="placeholder-img">
-                [Optional Image: Early Sketch / Wireframe]
-            </div>
-
-            <div class="placeholder-img">
-                [Insert Image: Figma Components / Spacing / Repeated Card Structures]
-            </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
-
-            <div class="placeholder-img">
-                [Insert Image: PowerPoint Training-Deck Application]
-            </div>
-
-            <div class="placeholder-img">
-                [Optional Image: Before-and-After Information Hierarchy Comparison]
-            </div>
-
-        </div>
-
 
         <!-- ================= DESIGN WORKFLOW ================= -->
 
@@ -1950,13 +2364,6 @@ const metaSmartEyewearContent = `
                     class="w-full max-w-[360px]">
             </div>
 
-        </div>
-
-        <div class="my-12 flex justify-center">
-            <img
-                src="https://drive.google.com/thumbnail?id=1evSbcnRA59oVnBkcvabwdsSHXsK7QjSM&sz=w1400"
-                alt="Ray-Ban Meta Pop-Up Opening at MUSINSA Seongsu"
-                class="w-full max-w-[500px]">
         </div>
 
         <div class="my-12 flex justify-center">
@@ -2200,6 +2607,10 @@ const metaSmartEyewearContent = `
         window.location.hash = '#archive/star-wars-ships';
     } else if (id === 'noahs-boutique') {
         window.location.hash = '#archive/noahs-boutique';
+    } else if (id === 'design-fundamentals') {
+        window.location.hash = '#archive/design-fundamentals';
+    } else if (id === 'seoul-photography') {
+        window.location.hash = '#archive/seoul-photography';    
     } else if (id === 'leonardo') {
         window.location.hash = '#archive/leonardo';
     } else {
